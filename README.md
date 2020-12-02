@@ -12,7 +12,7 @@ For decades, men, women, and others have enrolled in courses with great trepidat
 
 ## Our Developers
 
-- Dawson B.
-- Coleman U.
-- Nathan W.
-- Jack W.
+- Dawson B. (Bongo9911)
+- Coleman U. (colemanulry)
+- Nathan W. (gnawnahtan)
+- Jack W. (jackwestel)
