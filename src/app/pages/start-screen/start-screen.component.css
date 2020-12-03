@@ -1,0 +1,26 @@
+.container {
+  background-color: purple;
+  min-height: 100vh;
+  min-width: 100vh;
+}
+
+h1 {
+  color: pink;
+  text-align: center;
+  padding: 20px;
+  font-size: 40px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.button {
+  font-size: 40px;
+  background-color: pink;
+  color: purple;
+  padding-right: 20px;
+  padding-left: 20px;
+}
