@@ -11,6 +11,7 @@ import { CourseSelectionScreenForViewingComponent } from './pages/course-selecti
 import { CourseProfileForViewingComponent } from './pages/course-profile-for-viewing/course-profile-for-viewing.component';
 import { RouterModule } from '@angular/router';
 import { RegisterComponent } from './pages/register/register.component';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { RegisterComponent } from './pages/register/register.component';
     RateCourseScreenComponent,
     CourseSelectionScreenForViewingComponent,
     CourseProfileForViewingComponent,
-    RegisterComponent
+    RegisterComponent,
+    DropdownComponent
   ],
   imports: [
     BrowserModule,

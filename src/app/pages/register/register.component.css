@@ -1,7 +1,7 @@
 .container {
-  background-color: purple;
+  background: linear-gradient(to top, white 5%, purple 100%);
   min-height: 100vh;
-  min-width: 100vh;
+  min-width: 100%;
 }
 
 h1 {
@@ -18,16 +18,30 @@ h1 {
 }
 
 #login {
-  height: 40px;
+  height: 50px;
+  width: 30%;
+  background-color: pink;
+  color: purple;
+  margin-bottom: 20px;
+  font-size: 30px;
+  border-radius: 20px;
+  background: linear-gradient(to bottom, white 5%, pink 100%);
+  text-indent: 10px;
+}
+
+#login:hover {
+  height: 50px;
   background-color: pink;
   margin-bottom: 20px;
   font-size: 30px;
+  border-radius: 20px;
+  background: linear-gradient(to top, white 5%, pink 100%);
 }
 
 .buttonContainer {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .button {
@@ -36,4 +50,32 @@ h1 {
   color: purple;
   padding-right: 20px;
   padding-left: 20px;
+  border-radius: 20px;
+  margin-top: 20px;
+  background: linear-gradient(to bottom, white 5%, pink 100%);
+}
+.button:hover {
+  font-size: 40px;
+  background-color: pink;
+  color: purple;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 20px;
+  background: linear-gradient(to top, white 5%, pink 100%);
+}
+
+::placeholder {
+  color: purple;
+  opacity: 0.5;
+}
+
+.material-icons {
+  font-size: 26px;
+  color: purple;
+  display: inline-block;
+  text-transform: none;
+  white-space: nowrap;
+  position: relative;
+  left: -40px;
+  top: 2px;
 }
