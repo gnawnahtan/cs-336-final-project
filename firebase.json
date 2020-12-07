@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "public": "dist/RateMyCourse",
+    "site": "cs-336-rate-my-course",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
