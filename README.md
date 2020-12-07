@@ -4,6 +4,8 @@
 
 This web app is for the final project in Calvin University's Fall 2020 *CS-336: Web Development* course.
 
+The master branch of this repository is deployed to https://cs-336-rate-my-course.web.app/login-screen
+
 ## Our Vision
 
 For decades, men, women, and others have enrolled in courses with great trepidation. Many students want to prepare for their class as much as possible—both intellectually and emotionally. The traditional method is to ask upperclassmen what their experiences were like: “How was the course? What was the course load? Who was the professor? How was the professor?” Unfortunately, interrogating them isn’t always feasible, especially when the underclassmen aren’t as well-connected to the older students. Furthermore, having to repeatedly look for students who have previously taken a course is a daunting task.
