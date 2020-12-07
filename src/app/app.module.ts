@@ -12,6 +12,10 @@ import { CourseProfileForViewingComponent } from './pages/course-profile-for-vie
 import { RouterModule } from '@angular/router';
 import { RegisterComponent } from './pages/register/register.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
+import { firebaseConfig } from './credentials';
 
 @NgModule({
   declarations: [
@@ -23,12 +27,14 @@ import { DropdownComponent } from './components/dropdown/dropdown.component';
     CourseSelectionScreenForViewingComponent,
     CourseProfileForViewingComponent,
     RegisterComponent,
-    DropdownComponent
+    DropdownComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
