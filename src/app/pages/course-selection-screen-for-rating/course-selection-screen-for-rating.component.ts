@@ -19,7 +19,6 @@ export class CourseSelectionScreenForRatingComponent implements OnInit {
 
   public selectedDepartment: string;
   public selectedCourse: string;
-  result = false;
 
   constructor() { }
 
