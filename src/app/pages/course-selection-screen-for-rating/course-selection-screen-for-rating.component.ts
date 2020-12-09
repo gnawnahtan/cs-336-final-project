@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from "@angular/fire/firestore";
+import { AngularFireModule } from '@angular/fire';
+import { ActivatedRouteSnapshot } from '@angular/router';
 
-interface Department{
+interface Department {
   name: string;
   viewName: string
 }
 
-interface Course{
+interface Course {
   name: string;
   viewName: string
 }
@@ -21,29 +24,43 @@ export class CourseSelectionScreenForRatingComponent implements OnInit {
   public selectedCourse: string;
   result = false;
 
-  constructor() { }
+  departments: Department[] = [];
+  courses: Courses[] = [];
 
-  ngOnInit(): void {
+  constructor(private database: AngularFirestore) {
   }
 
-  departments: Department[] = [
-    {name: 'CS', viewName: 'CS'},
-    {name: 'Math', viewName: 'Math'},
-    {name: 'Engineering', viewName: 'Engineering'},
-  ];
+  ngOnInit(): void {
+    this.database.collection('departments')
+      .get()
+      .subscribe(res => {
+        res.docs.forEach((doc) => {
+          this.departments.push(doc.data());
+        });
+      });
+    this.database.collection('courses')
+      .get()
+      .subscribe(res => {
+        res.docs.forEach((doc) => {
+          this.courses.push(doc.data());
+        });
+      });
+  }
+
+
 
   csCourses: Course[] = [
-    {name: 'CS 108', viewName: 'CS 108'},
-    {name: 'CS 112', viewName: 'CS 112'},
-    {name: 'CS 212', viewName: 'CS 212'},
+    { name: 'CS 108', viewName: 'CS 108' },
+    { name: 'CS 112', viewName: 'CS 112' },
+    { name: 'CS 212', viewName: 'CS 212' },
   ];
   mathCourses: Course[] = [
-    {name: 'Math 251', viewName: 'Math 251'},
-    {name: 'Math 252', viewName: 'Math 252'},
-    {name: 'Stat 243', viewName: 'Stat 243'},
+    { name: 'Math 251', viewName: 'Math 251' },
+    { name: 'Math 252', viewName: 'Math 252' },
+    { name: 'Stat 243', viewName: 'Stat 243' },
   ];
   engrCourses: Course[] = [
-    {name: 'Engr 220', viewName: 'Engr 220'},
+    { name: 'Engr 220', viewName: 'Engr 220' },
   ];
 
 }
