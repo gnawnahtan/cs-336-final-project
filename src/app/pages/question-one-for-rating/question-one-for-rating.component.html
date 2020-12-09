@@ -1,1 +1,29 @@
-<p>question-one-for-rating works!</p>
+<div class="container">
+  <div class="image">
+    <img src="assets/RateMyCourse.png">
+  </div>
+
+  <div class="barContainer">
+    <mat-progress-bar color="accent" mode="buffer" value="25"></mat-progress-bar>
+  </div>
+
+  <div class="dropcon">
+    <mat-form-field appearance="fill" class="dropdownContainer">
+      <mat-label class="placeholder">Select Professor</mat-label>
+      <mat-select class="color" [(ngModel)]="selectedProfessor">
+        <mat-option>None of these</mat-option>
+        <mat-option *ngFor="let prof of professors" [value]="prof.name">
+          {{prof.viewName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div *ngIf="selectedProfessor" class="buttonContainer">
+    <a routerLink="/question-two-for-rating"><button type="button" class="button">Register</button></a>
+  </div>
+
+</div>
+
+
+

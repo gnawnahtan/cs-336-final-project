@@ -1,1 +1,29 @@
-<p>question-four-for-rating works!</p>
+
+<div class="container">
+  <div class="image">
+    <img src="assets/RateMyCourse.png">
+  </div>
+
+  <div class="barContainer">
+    <mat-progress-bar color="accent" mode="buffer" value="100"></mat-progress-bar>
+  </div>
+
+  <div class="dropcon">
+    <mat-form-field appearance="fill" class="dropdownContainer">
+      <mat-label class="placeholder">Letter Grade</mat-label>
+      <mat-select class="color" [(ngModel)]="selectedGrade">
+        <mat-option>None of these</mat-option>
+        <mat-option *ngFor="let item of grades" [value]="item.letter">
+          {{item.viewLetter}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div *ngIf="selectedGrade" class="buttonContainer">
+    <a routerLink="/start-screen"><button mat-button (click)="popup()" type="button" class="button">Register</button></a>
+  </div>
+
+</div>
+
+
