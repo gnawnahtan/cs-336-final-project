@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,8 +14,15 @@ import { RegisterComponent } from './pages/register/register.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { MatSelectModule } from '@angular/material/select';
 
 import { firebaseConfig } from './credentials';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { QuestionOneForRatingComponent } from './pages/question-one-for-rating/question-one-for-rating.component';
+import { QuestionTwoForRatingComponent } from './pages/question-two-for-rating/question-two-for-rating.component';
+import { QuestionThreeForRatingComponent } from './pages/question-three-for-rating/question-three-for-rating.component';
+import { QuestionFourForRatingComponent } from './pages/question-four-for-rating/question-four-for-rating.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +35,21 @@ import { firebaseConfig } from './credentials';
     CourseProfileForViewingComponent,
     RegisterComponent,
     DropdownComponent,
+    QuestionOneForRatingComponent,
+    QuestionTwoForRatingComponent,
+    QuestionThreeForRatingComponent,
+    QuestionFourForRatingComponent,
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
+    MatSelectModule,
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,62 @@
-<p>course-selection-screen-for-rating works!</p>
+<div class="container">
+  <div class="image">
+    <img src="assets/RateMyCourse.png">
+  </div>
+
+
+  <div class="dropcon">
+    <mat-form-field appearance="fill" class="dropdownContainer">
+      <mat-label class="placeholder">Department</mat-label>
+      <mat-select class="color" [(ngModel)]="selectedDepartment">
+        <mat-option>None of these</mat-option>
+        <mat-option *ngFor="let dept of departments" [value]="dept.name">
+          {{dept.viewName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div *ngIf="selectedDepartment=='CS'" class="dropcon">
+    <mat-form-field appearance="fill" class="dropdownContainer">
+      <mat-label class="placeholder">Course</mat-label>
+      <mat-select [(ngModel)]="selectedCourse">
+        <mat-option>None of these</mat-option>
+        <mat-option *ngFor="let course of csCourses" [value]="course.name">
+          {{course.viewName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div *ngIf="selectedDepartment=='Math'" class="dropcon">
+    <mat-form-field appearance="fill" class="dropdownContainer">
+      <mat-label class="placeholder">Course</mat-label>
+      <mat-select [(ngModel)]="selectedCourse">
+        <mat-option>None of these</mat-option>
+        <mat-option *ngFor="let course of mathCourses" [value]="course.name">
+          {{course.viewName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div *ngIf="selectedDepartment=='Engineering'" class="dropcon">
+    <mat-form-field appearance="fill" class="dropdownContainer">
+      <mat-label class="placeholder">Course</mat-label>
+      <mat-select [(ngModel)]="selectedCourse">
+        <mat-option>None of these</mat-option>
+        <mat-option *ngFor="let course of engrCourses" [value]="course.name">
+          {{course.viewName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div *ngIf="selectedCourse && selectedDepartment" class="buttonContainer">
+    <a routerLink="/course-profile-for-viewing"><button type="button" class="button">Rate this Course</button></a>
+  </div>
+
+</div>
+
+
+

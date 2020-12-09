@@ -4,47 +4,27 @@
   min-width: 100%;
 }
 
-h1 {
-  color: pink;
-  text-align: center;
-  padding: 20px;
-  font-size: 40px;
-}
-
-.login {
-  text-align: center;
-  color: pink;
-  font-size: 40px;
-}
-
-#login {
-  height: 50px;
+img {
+  height: 20%;
   width: 30%;
-  background-color: pink;
-  color: purple;
-  margin-bottom: 20px;
-  font-size: 30px;
-  border-radius: 20px;
-  background: linear-gradient(to bottom, white 5%, pink 100%);
-  text-indent: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 2%;
 }
 
-#login:hover {
-  height: 50px;
-  background-color: pink;
-  margin-bottom: 20px;
-  font-size: 30px;
-  border-radius: 20px;
-  background: linear-gradient(to top, white 5%, pink 100%);
+.dropdownContainer {
+  display: flex;
+  justify-content: center;
 }
 
-.textContainer {
-  margin-top: 40px;
+.dropdown {
+  color: white;
 }
 
-.noAccount {
+.placeholder {
+  font-size: 16px;
   text-align: center;
-  color: pink;
 }
 
 .buttonContainer {
@@ -54,37 +34,39 @@ h1 {
 }
 
 .button {
+  height: 8vh;
   font-size: 40px;
+  text-align: center;
   background-color: pink;
   color: purple;
-  padding-right: 20px;
-  padding-left: 20px;
   border-radius: 20px;
-  margin-top: 20px;
   background: linear-gradient(to bottom, white 5%, pink 100%);
 }
+
 .button:hover {
+  height: 8vh;
   font-size: 40px;
+  text-align: center;
   background-color: pink;
   color: purple;
-  padding-right: 20px;
-  padding-left: 20px;
   border-radius: 20px;
   background: linear-gradient(to top, white 5%, pink 100%);
 }
 
-::placeholder {
-  color: purple;
-  opacity: 0.5;
+.dropcon {
+  font-size: 2.5vh;
+  font: white;
 }
 
-.material-icons {
-  font-size: 26px;
-  color: purple;
-  display: inline-block;
-  text-transform: none;
-  white-space: nowrap;
-  position: relative;
-  left: -40px;
-  top: 2px;
+:host ::ng-deep mat-label {
+  font-weight: bold;
+  color: white;
+}
+:host ::ng-deep mat-select {
+  font-weight: bold;
+  color: white;
+}
+:host ::ng-deep mat-option {
+  font-weight: bold;
+  color: white;
 }
