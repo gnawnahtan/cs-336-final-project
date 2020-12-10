@@ -15,6 +15,8 @@ import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { MatSelectModule } from '@angular/material/select';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { firebaseConfig } from './credentials';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,6 +25,7 @@ import { QuestionOneForRatingComponent } from './pages/question-one-for-rating/q
 import { QuestionTwoForRatingComponent } from './pages/question-two-for-rating/question-two-for-rating.component';
 import { QuestionThreeForRatingComponent } from './pages/question-three-for-rating/question-three-for-rating.component';
 import { QuestionFourForRatingComponent } from './pages/question-four-for-rating/question-four-for-rating.component';
+import { DialogComponent } from './component/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,7 @@ import { QuestionFourForRatingComponent } from './pages/question-four-for-rating
     QuestionTwoForRatingComponent,
     QuestionThreeForRatingComponent,
     QuestionFourForRatingComponent,
+    DialogComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
@@ -48,6 +52,8 @@ import { QuestionFourForRatingComponent } from './pages/question-four-for-rating
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
     MatSelectModule,
+    MatProgressBarModule,
+    MatDialogModule,
     BrowserAnimationsModule,
     FormsModule
   ],

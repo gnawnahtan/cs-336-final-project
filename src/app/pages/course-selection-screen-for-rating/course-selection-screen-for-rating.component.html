@@ -33,7 +33,7 @@
       <mat-label class="placeholder">Course</mat-label>
       <mat-select [(ngModel)]="selectedCourse">
         <mat-option>None of these</mat-option>
-        <mat-option *ngFor="let course of courses" [value]="course.name">
+        <mat-option *ngFor="let course of courses" [value]="course.title">
           {{course.id}}: {{course.title}}
         </mat-option>
       </mat-select>
@@ -66,7 +66,7 @@
   </div> -->
 
   <div *ngIf="selectedCourse && selectedDepartment" class="buttonContainer">
-    <a routerLink="/course-profile-for-viewing"><button type="button" class="button">Rate this Course</button></a>
+    <a routerLink="/question-one-for-rating"><button type="button" class="button">Rate this Course</button></a>
   </div>
 
 </div>

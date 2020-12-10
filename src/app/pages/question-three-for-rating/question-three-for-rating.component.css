@@ -1,0 +1,48 @@
+.container {
+  background: linear-gradient(to top, white 5%, purple 100%);
+  min-height: 100vh;
+  min-width: 100%;
+}
+
+img {
+  height: 20%;
+  width: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 2%;
+}
+
+.barContainer {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.button {
+  height: 8vh;
+  font-size: 4.5vh;
+  background-color: pink;
+  color: purple;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 20px;
+  margin-top: 20px;
+  background: linear-gradient(to bottom, white 5%, pink 100%);
+}
+
+.button:hover {
+  height: 8vh;
+  font-size: 4.5vh;
+  background-color: pink;
+  color: purple;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 20px;
+  background: linear-gradient(to top, white 5%, pink 100%);
+}

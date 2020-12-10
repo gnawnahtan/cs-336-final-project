@@ -22,7 +22,6 @@ export class CourseSelectionScreenForRatingComponent implements OnInit {
 
   public selectedDepartment: string;
   public selectedCourse: string;
-  result = false;
 
   departments: Department[] = [];
   courses: Courses[] = [];
