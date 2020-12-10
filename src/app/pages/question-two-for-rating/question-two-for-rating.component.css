@@ -46,3 +46,10 @@ img {
   border-radius: 20px;
   background: linear-gradient(to top, white 5%, pink 100%);
 }
+
+.chip-unselected {
+}
+
+.chip-selected {
+  background-color: #fdca4f !important;
+}
