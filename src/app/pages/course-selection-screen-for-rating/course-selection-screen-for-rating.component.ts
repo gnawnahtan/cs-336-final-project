@@ -37,9 +37,6 @@ export class CourseSelectionScreenForRatingComponent implements OnInit {
       });
   }
 
-  // testing for bongo's sake
-
-
   // csCourses: Course[] = [
   //   { name: 'CS 108', viewName: 'CS 108' },
   //   { name: 'CS 112', viewName: 'CS 112' },
