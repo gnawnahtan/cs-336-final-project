@@ -1,14 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Department{
-  name: string;
-  viewName: string
-}
-
-interface Course{
-  name: string;
-  viewName: string
-}
+import { AngularFirestore } from "@angular/fire/firestore";
 
 @Component({
   selector: 'app-course-selection-screen-for-viewing',
@@ -17,32 +8,53 @@ interface Course{
 })
 export class CourseSelectionScreenForViewingComponent implements OnInit {
 
-  public selectedDepartment: string;
-  public selectedCourse: string;
-  result = false;
+  public selectedDepartment: Department;
+  public selectedCourse: Courses;
 
-  constructor() { }
+  departments: Department[] = [];
+  deptCourses: Courses[] = [];
 
-  ngOnInit(): void {
+  constructor(private database: AngularFirestore) {
   }
 
-  departments: Department[] = [
-    {name: 'CS', viewName: 'CS'},
-    {name: 'Math', viewName: 'Math'},
-    {name: 'Engineering', viewName: 'Engineering'},
-  ];
+  ngOnInit(): void {
+    this.database.collection<Department>('departments')
+      .get()
+      .subscribe(res => {
+        res.docs.forEach((doc) => {
+          this.departments.push(doc.data());
+        });
+      });
+  }
 
-  csCourses: Course[] = [
-    {name: 'CS 108', viewName: 'CS 108'},
-    {name: 'CS 112', viewName: 'CS 112'},
-    {name: 'CS 212', viewName: 'CS 212'},
-  ];
-  mathCourses: Course[] = [
-    {name: 'Math 251', viewName: 'Math 251'},
-    {name: 'Math 252', viewName: 'Math 252'},
-    {name: 'Stat 243', viewName: 'Stat 243'},
-  ];
-  engrCourses: Course[] = [
-    {name: 'Engr 220', viewName: 'Engr 220'},
-  ];
+  changeDepartment() {
+    this.deptCourses = [];
+
+    const departmentDocRef = this.database.doc('departments/' + this.selectedDepartment);
+    this.database
+      .collection<Courses>('courses', ref => ref.where('department', '==', departmentDocRef.ref))
+      .get()
+      .subscribe(res => {
+        res.docs.forEach((doc) => {
+          this.deptCourses.push(doc.data());
+          console.log(this.deptCourses);
+        });
+      });
+  }
+
+  changeCourse() {
+    console.log(this.selectedCourse);
+  }
+}
+
+interface Department {
+  title: string;
+  code: string;
+}
+
+interface Courses {
+  id: number;
+  title: string;
+  description: string;
+  department: string;
 }
