@@ -37,6 +37,7 @@ export class CourseSelectionScreenForRatingComponent implements OnInit {
       });
   }
 
+  // testing for bongo's sake
 
 
   // csCourses: Course[] = [
