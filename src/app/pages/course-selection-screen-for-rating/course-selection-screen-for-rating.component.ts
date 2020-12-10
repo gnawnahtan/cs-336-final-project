@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from "@angular/fire/firestore";
-import { AngularFireModule } from '@angular/fire';
-import { ActivatedRouteSnapshot } from '@angular/router';
 
 @Component({
   selector: 'app-course-selection-screen-for-rating',
@@ -11,11 +9,11 @@ import { ActivatedRouteSnapshot } from '@angular/router';
 
 export class CourseSelectionScreenForRatingComponent implements OnInit {
 
-  public selectedDepartment: string;
-  public selectedCourse: string;
+  public selectedDepartment: Department;
+  public selectedCourse: Courses;
 
   departments: Department[] = [];
-  courses: Courses[] = [];
+  deptCourses: Courses[] = [];
 
   constructor(private database: AngularFirestore) {
   }
@@ -28,33 +26,32 @@ export class CourseSelectionScreenForRatingComponent implements OnInit {
           this.departments.push(doc.data());
         });
       });
-    this.database.collection<Courses>('courses')
+  }
+
+  changeDepartment() {
+    this.deptCourses = [];
+
+    const departmentDocRef = this.database.doc('departments/' + this.selectedDepartment);
+    this.database
+      .collection<Courses>('courses', ref => ref.where('department', '==', departmentDocRef.ref))
       .get()
       .subscribe(res => {
         res.docs.forEach((doc) => {
-          this.courses.push(doc.data());
+          this.deptCourses.push(doc.data());
+          console.log(this.deptCourses);
         });
       });
   }
 
-  // csCourses: Course[] = [
-  //   { name: 'CS 108', viewName: 'CS 108' },
-  //   { name: 'CS 112', viewName: 'CS 112' },
-  //   { name: 'CS 212', viewName: 'CS 212' },
-  // ];
-  // mathCourses: Course[] = [
-  //   { name: 'Math 251', viewName: 'Math 251' },
-  //   { name: 'Math 252', viewName: 'Math 252' },
-  //   { name: 'Stat 243', viewName: 'Stat 243' },
-  // ];
-  // engrCourses: Course[] = [
-  //   { name: 'Engr 220', viewName: 'Engr 220' },
-  // ];
+  changeCourse() {
+    console.log(this.selectedCourse);
+  }
 
 }
 
 interface Department {
   title: string;
+  code: string;
 }
 
 interface Courses {
