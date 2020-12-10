@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { RotateProp } from '@fortawesome/fontawesome-svg-core';
+import { StartScreenComponent } from '../start-screen/start-screen.component';
 
 interface Grade {
   letter: string;
@@ -35,7 +38,6 @@ export class QuestionFourForRatingComponent implements OnInit {
   ];
 
   popup() {
-    console.log("this worked");
     const dialogRef = this.dialog.open(DialogContent);
   }
 }
@@ -45,6 +47,13 @@ export class QuestionFourForRatingComponent implements OnInit {
   templateUrl: 'dialog-content.html',
 })
 export class DialogContent{
+
+  constructor(public dialog: MatDialogRef<DialogContent>, private router: Router) {}
+
+  close(): void {
+    this.dialog.close();
+    this.router.navigate([`${'/start-screen'}`]);
+  }
 
 }
 

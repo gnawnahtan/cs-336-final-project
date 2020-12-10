@@ -19,6 +19,9 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { firebaseConfig } from './credentials';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -57,9 +60,12 @@ import { DialogComponent } from './component/dialog/dialog.component';
     MatProgressBarModule,
     MatDialogModule,
     MatCardModule,
+    MatButtonModule,
     BrowserAnimationsModule,
-    FormsModule, 
+    FormsModule,
     MatChipsModule,
+    MatDividerModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

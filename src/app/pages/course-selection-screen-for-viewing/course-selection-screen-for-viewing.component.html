@@ -13,6 +13,7 @@
         <mat-option>None of these</mat-option>
         <mat-option *ngFor="let dept of departments" [value]="dept.code">
           {{dept.title}}
+          <mat-divider></mat-divider>
         </mat-option>
       </mat-select>
     </mat-form-field>
@@ -25,6 +26,7 @@
         <mat-option>None of these</mat-option>
         <mat-option *ngFor="let course of deptCourses" [value]="course.id">
           {{course.id}}: {{course.title}}
+          <mat-divider></mat-divider>
         </mat-option>
       </mat-select>
     </mat-form-field>

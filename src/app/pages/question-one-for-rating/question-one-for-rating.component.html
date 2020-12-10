@@ -15,7 +15,7 @@
       <mat-select class="color" [(ngModel)]="selectedProfessor">
         <mat-option>None of these</mat-option>
         <mat-option *ngFor="let prof of professors" [value]="prof.name">
-          {{prof.viewName}}
+          {{prof.viewName}} <mat-divider></mat-divider>
         </mat-option>
       </mat-select>
     </mat-form-field>

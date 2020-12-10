@@ -27,9 +27,10 @@ h1 {
 #login {
   height: 50px;
   width: 30%;
-  margin-top: 2vh;
+  background-color: pink;
+  color: purple;
   margin-bottom: 20px;
-  font-size: 30px;
+  font-size: 3vh;
   border-radius: 20px;
   background: linear-gradient(to bottom, white 5%, pink 100%);
   text-indent: 10px;
@@ -37,11 +38,14 @@ h1 {
 
 #login:hover {
   height: 50px;
+  width: 30%;
   background-color: pink;
+  color: purple;
   margin-bottom: 20px;
-  font-size: 30px;
+  font-size: 3vh;
   border-radius: 20px;
   background: linear-gradient(to top, white 5%, pink 100%);
+  text-indent: 10px;
 }
 
 .buttonContainer {
