@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionThreeForRatingComponent implements OnInit {
 
+  concerns : Concern[] = [{name: 'Lots of homework', selected: false}, {name: 'Hard grader', selected: false},];
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+}
+
+interface Concern {
+  name: string;
+  selected: boolean;
 }

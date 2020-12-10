@@ -1,52 +1,30 @@
 <div class="container">
-  <div class="image">
-    <img src="assets/RateMyCourse.png">
-  </div>
+  <a routerLink="/start-screen">
+    <div class="image">
+      <img src="assets/RateMyCourse.png">
+    </div>
+  </a>
 
 
   <div class="dropcon">
     <mat-form-field appearance="fill" class="dropdownContainer">
       <mat-label class="placeholder">Department</mat-label>
-      <mat-select class="color" [(ngModel)]="selectedDepartment">
+      <mat-select class="color" [(ngModel)]="selectedDepartment" (selectionChange)="changeDepartment()">
         <mat-option>None of these</mat-option>
-        <mat-option *ngFor="let dept of departments" [value]="dept.name">
-          {{dept.viewName}}
+        <mat-option *ngFor="let dept of departments" [value]="dept.code">
+          {{dept.title}}
         </mat-option>
       </mat-select>
     </mat-form-field>
   </div>
 
-  <div *ngIf="selectedDepartment=='CS'" class="dropcon">
+  <div *ngIf="selectedDepartment" class="dropcon">
     <mat-form-field appearance="fill" class="dropdownContainer">
       <mat-label class="placeholder">Course</mat-label>
-      <mat-select [(ngModel)]="selectedCourse">
+      <mat-select [(ngModel)]="selectedCourse" (selectionChange)="changeCourse()">
         <mat-option>None of these</mat-option>
-        <mat-option *ngFor="let course of csCourses" [value]="course.name">
-          {{course.viewName}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-
-  <div *ngIf="selectedDepartment=='Math'" class="dropcon">
-    <mat-form-field appearance="fill" class="dropdownContainer">
-      <mat-label class="placeholder">Course</mat-label>
-      <mat-select [(ngModel)]="selectedCourse">
-        <mat-option>None of these</mat-option>
-        <mat-option *ngFor="let course of mathCourses" [value]="course.name">
-          {{course.viewName}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-
-  <div *ngIf="selectedDepartment=='Engineering'" class="dropcon">
-    <mat-form-field appearance="fill" class="dropdownContainer">
-      <mat-label class="placeholder">Course</mat-label>
-      <mat-select [(ngModel)]="selectedCourse">
-        <mat-option>None of these</mat-option>
-        <mat-option *ngFor="let course of engrCourses" [value]="course.name">
-          {{course.viewName}}
+        <mat-option *ngFor="let course of deptCourses" [value]="course.id">
+          {{course.id}}: {{course.title}}
         </mat-option>
       </mat-select>
     </mat-form-field>

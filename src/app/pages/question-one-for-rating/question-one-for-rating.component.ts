@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 interface Professor{
   name: string;
   viewName: string
@@ -14,7 +13,7 @@ export class QuestionOneForRatingComponent implements OnInit {
 
   public selectedProfessor: string;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }

@@ -18,6 +18,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
+
 import { firebaseConfig } from './credentials';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
@@ -56,7 +58,8 @@ import { DialogComponent } from './component/dialog/dialog.component';
     MatDialogModule,
     MatCardModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule, 
+    MatChipsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

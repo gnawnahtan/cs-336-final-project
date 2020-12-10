@@ -4,7 +4,7 @@
 
 This web app is for the final project in Calvin University's Fall 2020 *CS-336: Web Development* course.
 
-The master branch of this repository is deployed to https://cs-336-rate-my-course.web.app/login-screen
+The master branch of this repository is deployed to https://cs-336-rate-my-course.web.app/
 
 ## Our Vision
 

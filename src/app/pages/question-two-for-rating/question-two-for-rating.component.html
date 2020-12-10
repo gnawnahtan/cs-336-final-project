@@ -1,19 +1,27 @@
-
 <div class="container">
-  <div class="image">
-    <img src="assets/RateMyCourse.png">
-  </div>
+  <a routerLink="/start-screen">
+    <div class="image">
+      <img src="assets/RateMyCourse.png">
+    </div>
+  </a>
 
   <div class="barContainer">
     <mat-progress-bar color="accent" mode="buffer" value="50"></mat-progress-bar>
   </div>
 
-  <p>Question 2</p>
+  <p>Question 2: Commendations</p>
+
+  <div class="chip-list">
+    <mat-chip-list class="example-chip" cdkDropListOrientation="horizontal">
+      <mat-chip *ngFor="let com of commendations" (click)="com.selected = !com.selected"
+        [ngClass]="(com.selected) ? 'chip-selected' : 'chip-unselected'">
+        {{com.name}}
+      </mat-chip>
+    </mat-chip-list>
+  </div>
 
   <div class="buttonContainer">
     <a routerLink="/question-three-for-rating"><button type="button" class="button">Next</button></a>
   </div>
 
 </div>
-
-
