@@ -17,6 +17,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { MatSelectModule } from '@angular/material/select';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 
 import { firebaseConfig } from './credentials';
@@ -55,6 +56,7 @@ import { DialogComponent } from './component/dialog/dialog.component';
     MatSelectModule,
     MatProgressBarModule,
     MatDialogModule,
+    MatCardModule,
     BrowserAnimationsModule,
     FormsModule, 
     MatChipsModule,
