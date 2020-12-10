@@ -8,7 +8,14 @@
     <mat-progress-bar color="accent" mode="buffer" value="75"></mat-progress-bar>
   </div>
 
-  <p>Question 3</p>
+  <p>Question 3: Concerns</p>
+
+  <mat-chip-list class="example-chip" cdkDropListOrientation="horizontal">
+    <mat-chip *ngFor="let con of concerns" (click)="con.selected = !con.selected"
+    [ngClass]="(con.selected) ? 'chip-selected' : 'chip-unselected'">
+      {{con.name}}
+    </mat-chip>
+  </mat-chip-list>
 
   <div class="buttonContainer">
     <a routerLink="/question-four-for-rating"><button type="button" class="button">Next</button></a>
