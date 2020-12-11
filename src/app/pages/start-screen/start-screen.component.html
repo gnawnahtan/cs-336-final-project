@@ -1,15 +1,13 @@
 <div class="container">
+<span>
   <a routerLink="/start-screen">
     <div class="image">
       <img src="assets/RateMyCourse.png">
     </div>
   </a>
+  <mat-icon (click)="popup()" class="material-icons">settings</mat-icon>
+</span>
 
-  <span>
-    <button mat-icon-button>
-      <mat-icon (click)="popup()" class="material-icons">settings</mat-icon>
-    </button>
-  </span>
 
   <div class="buttonContainer">
     <a routerLink="/course-selection-screen-for-rating"><button type="button" class="button">Rate a Course</button></a>

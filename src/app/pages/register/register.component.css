@@ -22,27 +22,28 @@ h1 {
 
 .login {
   text-align: center;
+  padding-left: 2vh;
 }
 
 #login {
+  color: purple;
   height: 50px;
   width: 30%;
-  background-color: pink;
-  color: purple;
-  margin-bottom: 20px;
-  font-size: 3vh;
+  margin-top: 2vh;
+  margin-bottom: 5px;
+  font-size: 30px;
   border-radius: 20px;
   background: linear-gradient(to bottom, white 5%, pink 100%);
   text-indent: 10px;
 }
 
 #login:hover {
+  color: purple;
   height: 50px;
   width: 30%;
-  background-color: pink;
-  color: purple;
-  margin-bottom: 20px;
-  font-size: 3vh;
+  margin-top: 2vh;
+  margin-bottom: 5px;
+  font-size: 30px;
   border-radius: 20px;
   background: linear-gradient(to top, white 5%, pink 100%);
   text-indent: 10px;
@@ -78,6 +79,7 @@ h1 {
 }
 
 ::placeholder {
+  font-size: 3.4vh;
   color: purple;
   opacity: 0.5;
 }
@@ -91,4 +93,15 @@ h1 {
   position: relative;
   left: -40px;
   top: 2px;
+}
+
+.showpass {
+  display: flex;
+  justify-content: center;
+}
+
+.little {
+  font-size: small;
+  padding-left: 3px;
+  color: purple;
 }

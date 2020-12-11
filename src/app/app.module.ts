@@ -22,6 +22,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatRippleModule } from '@angular/material/core';
 
 import { firebaseConfig } from './credentials';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -66,6 +67,7 @@ import { DialogComponent } from './component/dialog/dialog.component';
     MatChipsModule,
     MatDividerModule,
     MatFormFieldModule,
+    MatRippleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

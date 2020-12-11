@@ -9,6 +9,8 @@ import * as firebase from 'firebase';
 })
 export class LoginScreenComponent implements OnInit {
 
+  public visibility: boolean = false;
+
   constructor(private firestore: AngularFirestore) { }
 
   ngOnInit(): void {
@@ -22,6 +24,11 @@ export class LoginScreenComponent implements OnInit {
     //   firstName: 'Keith',
     //   lastName: 'Vander Linden',
     // });
+  }
+
+  // toggle visibility of password
+  showPassword(): void {
+    this.visibility = !this.visibility
   }
 
 }

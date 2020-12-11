@@ -10,7 +10,7 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 2%;
+  padding-bottom: 4%;
 }
 
 h1 {
@@ -22,8 +22,7 @@ h1 {
 
 .login {
   text-align: center;
-  color: pink;
-  font-size: 40px;
+  padding-left: 2vh;
 }
 
 #login {
@@ -38,6 +37,18 @@ h1 {
   text-indent: 10px;
 }
 
+#loginsecond {
+  height: 50px;
+  width: 30%;
+  background-color: pink;
+  color: purple;
+  margin-bottom: 2px;
+  font-size: 3vh;
+  border-radius: 20px;
+  background: linear-gradient(to bottom, white 5%, pink 100%);
+  text-indent: 10px;
+}
+
 #login:hover {
   height: 50px;
   background-color: pink;
@@ -45,6 +56,17 @@ h1 {
   font-size: 3vh;
   border-radius: 20px;
   background: linear-gradient(to top, white 5%, pink 100%);
+}
+#loginsecond:hover {
+  height: 50px;
+  width: 30%;
+  background-color: pink;
+  color: purple;
+  margin-bottom: 2px;
+  font-size: 3vh;
+  border-radius: 20px;
+  background: linear-gradient(to top, white 5%, pink 100%);
+  text-indent: 10px;
 }
 
 .textContainer {
@@ -110,6 +132,7 @@ h1 {
 }
 
 ::placeholder {
+  font-size: 3.4vh;
   color: purple;
   opacity: 0.5;
 }
@@ -123,4 +146,16 @@ h1 {
   position: relative;
   left: -40px;
   top: 2px;
+}
+
+.showpass {
+  display: flex;
+  justify-content: center;
+  padding-top: 2px;
+}
+
+.little {
+  font-size: small;
+  padding-left: 3px;
+  color: purple;
 }
