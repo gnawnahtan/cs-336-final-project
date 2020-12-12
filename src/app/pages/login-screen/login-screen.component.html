@@ -8,9 +8,13 @@
     <i class="material-icons">perm_identity</i>
   </div>
   <div class="login">
-    <input type="text" id="login" placeholder="Password">
+    <input [type]="visibility ? 'text' : 'password'" id="loginsecond" placeholder="Password">
     <i class="material-icons">lock</i>
+    <div class="showpass">
+      <input type="checkbox" (click)="showPassword()"><p class="little">Show Password</p>
+    </div>
   </div>
+
 
   <div class="buttonContainer">
     <a routerLink="/start-screen"><button type="button" class="button" (click)="login()">Login</button></a>

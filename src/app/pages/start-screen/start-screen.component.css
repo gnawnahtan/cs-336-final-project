@@ -55,12 +55,16 @@ h1 {
 }
 
 .material-icons {
-  font-size: 26px;
-  color: purple;
+  font-size: 36px;
+  color: white;
   display: inline-block;
   text-transform: none;
   white-space: nowrap;
-  position: relative;
-  left: -40px;
-  top: 2px;
+  position: fixed;
+  bottom: 91vh;
+  left: 18%;
+}
+
+.dialogButton {
+  padding: 5vh;
 }

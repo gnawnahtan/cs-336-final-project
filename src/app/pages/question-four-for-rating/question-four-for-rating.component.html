@@ -17,13 +17,14 @@
         <mat-option>None of these</mat-option>
         <mat-option *ngFor="let item of grades" [value]="item.letter">
           {{item.viewLetter}}
+          <mat-divider></mat-divider>
         </mat-option>
       </mat-select>
     </mat-form-field>
   </div>
 
   <div *ngIf="selectedGrade" class="buttonContainer">
-    <a routerLink="/start-screen"><button mat-button (click)="popup()" type="button" class="button">Submit Rating</button></a>
+    <button (click)="popup()" type="button" class="button">Submit Rating</button>
   </div>
 
 </div>
