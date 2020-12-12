@@ -6,13 +6,13 @@
   </a>
   <div>
     <h2 id='course-profile-header'>You're Viewing the Following Course Profile</h2>
-    <h1>CS-336: Web Development</h1>
+    <h1>{{selectedDepartment.code}}-{{selectedCourse.id}}: {{selectedCourse.title}}</h1>
   </div>
   <h2>Average letter grade: </h2>
   <mat-card class='letter-grade-card'>
-    <mat-card-title id='letter-grade-text'>B+</mat-card-title>
+    <mat-card-title id='letter-grade-text'>{{averageGrade}}</mat-card-title>
   </mat-card>
-  <h2>Students' Favourite Professor for this Course</h2>
+  <h2>Students' Favorite Professor for this Course</h2>
   <mat-card>
     <mat-card-title>Victor Norman</mat-card-title>
   </mat-card>
