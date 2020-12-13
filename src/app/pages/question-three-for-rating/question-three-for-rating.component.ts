@@ -24,6 +24,7 @@ export class QuestionThreeForRatingComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // navigate to question four
   goToNext() {
     this.router.navigate([`${'/question-four-for-rating'}`]);
   }

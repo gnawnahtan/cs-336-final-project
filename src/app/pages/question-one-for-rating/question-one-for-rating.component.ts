@@ -18,6 +18,7 @@ export class QuestionOneForRatingComponent {
 
   constructor(private router: Router) {}
 
+  // navigate to question two
   goToNext() {
     this.router.navigate([`${'/question-two-for-rating'}`]);
   }

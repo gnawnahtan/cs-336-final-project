@@ -55,6 +55,7 @@ export class CourseSelectionScreenForViewingComponent implements OnInit {
     console.log(this.selectedCourse);
   }
 
+  // navigate to course viewing screen
   goToNext() {
     this.router.navigate([`${'/course-profile-for-viewing'}`]);
   }

@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class QuestionTwoForRatingComponent implements OnInit {
 
+  // array of commendations - to be displayed in angular material chips
   commendations : Commendation[] = [
     {name: 'Low homework', selected: false, color: 'primary'},
     {name: 'Easy grading', selected: false, color: '#00ff00'},
@@ -24,6 +25,7 @@ export class QuestionTwoForRatingComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // navigate to question three
   goToNext() {
     this.router.navigate([`${'/question-three-for-rating'}`]);
   }

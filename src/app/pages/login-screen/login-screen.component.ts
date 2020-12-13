@@ -28,10 +28,12 @@ export class LoginScreenComponent implements OnInit {
     // });
   }
 
+  // navigate to start screen
   goToStart() {
     this.router.navigate([`${'/start-screen'}`]);
   }
 
+  // navigate to registration screen
   goToRegister() {
     this.router.navigate([`${'/register'}`]);
   }

@@ -21,6 +21,7 @@ export class RegisterComponent implements OnInit {
     this.visibility = !this.visibility
   }
 
+  // navigate to login screen
   goToLogin() {
     this.router.navigate([`${'/login-screen'}`]);
   }

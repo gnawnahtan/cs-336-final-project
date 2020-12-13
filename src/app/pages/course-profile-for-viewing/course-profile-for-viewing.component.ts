@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from "@angular/fire/firestore";
 import { Course, Department, Rating, Professor } from "../../customInterfaces";
 import { DataService } from '../../dataservice';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-course-profile-for-viewing',
@@ -16,7 +17,7 @@ export class CourseProfileForViewingComponent implements OnInit {
   averageLetter : string = '?';
   professors : Professor[] = [];
   topProfessor : string = "";
-  
+
   commendations : string[] = [];
   concerns : string[] = [];
 
@@ -27,7 +28,7 @@ export class CourseProfileForViewingComponent implements OnInit {
     {grade: 1.3, letter: 'D+'}, {grade: 1.0, letter: 'D'}, {grade: 0.0, letter: 'E'},
   ]
 
-  constructor(private database: AngularFirestore, public dataservice: DataService) { }
+  constructor(private database: AngularFirestore, public dataservice: DataService, private router: Router) { }
 
   ngOnInit(): void {
     this.selectedCourse = this.dataservice.course;
@@ -56,7 +57,7 @@ export class CourseProfileForViewingComponent implements OnInit {
 
       let profCounts = {};
       this.courseRatings.forEach(function(x) { profCounts[x.professor] = (profCounts[x.professor] || 0) + 1; }) //https://stackoverflow.com/a/19395302/14404345
-      
+
       for(const prop in profCounts) {
         this.database.collection<Professor>('professors').doc(prop).get()
           .subscribe(async res => {
@@ -85,6 +86,12 @@ export class CourseProfileForViewingComponent implements OnInit {
 
     return letter;
   }
+
+  // navigate back to start screen
+  backToStart() {
+    this.router.navigate([`${'/start-screen'}`]);
+  }
+
 }
 
 interface Grade {
