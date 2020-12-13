@@ -1,7 +1,8 @@
 .container {
-  background: linear-gradient(to top, white 5%, purple 100%);
+  background: linear-gradient(to top, hotpink 5%, purple 100%);
   min-height: 100vh;
   min-width: 100%;
+  padding-bottom: 40px;
 }
 
 img {
@@ -31,9 +32,12 @@ p {
 .letter-grade-card {
   min-height: 75px;
   min-width: 75px;
-  height: 15%;
-  width: 15%;
+  height: 20vmin;
+  width: 20vmin;
   text-align: center;
+  line-height: 20vmin;
+  vertical-align: middle;
+  padding: 0;
 }
 
 #letter-grade-text {
@@ -92,4 +96,44 @@ p {
 :host ::ng-deep mat-option {
   font-weight: bold;
   color: white;
+}
+
+.com-chip {
+  background-color: #81ff41 !important;
+}
+
+.con-chip {
+  background-color: #ff4141 !important;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'grade prof'
+    'break break'
+    'com con';
+}
+
+.grade {
+  grid-area: grade;
+  width: 48vw;
+}
+
+.prof {
+  grid-area: prof;
+  width: 48vw;
+}
+
+.com {
+  grid-area: com;
+  width: 48vw;
+}
+
+.con {
+  grid-area: con;
+  width: 48vw;
+}
+
+.prof-card {
+  width: 100%;
 }

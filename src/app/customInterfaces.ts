@@ -18,3 +18,8 @@ export interface Rating {
 	professor: string;
 	user: string;
 }
+
+export interface Professor {
+	firstName: string;
+	lastName: string;
+}
