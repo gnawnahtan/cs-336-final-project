@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from "@angular/fire/firestore";
+import { Course, Department } from "../../customInterfaces";
+import { DataService } from '../../dataservice';
 
 @Component({
   selector: 'app-course-selection-screen-for-viewing',
@@ -10,12 +12,12 @@ export class CourseSelectionScreenForViewingComponent implements OnInit {
 
   // to be used in html file for ngIf displays
   public selectedDepartment: Department;
-  public selectedCourse: Courses;
+  public selectedCourse: Course;
 
   departments: Department[] = [];
-  deptCourses: Courses[] = [];
+  deptCourses: Course[] = [];
 
-  constructor(private database: AngularFirestore) {
+  constructor(private database: AngularFirestore, public dataservice: DataService) {
   }
 
   ngOnInit(): void {
@@ -28,12 +30,17 @@ export class CourseSelectionScreenForViewingComponent implements OnInit {
       });
   }
 
+  ngOnDestroy() {
+    this.dataservice.course = this.selectedCourse;
+    this.dataservice.department = this.selectedDepartment;
+  }
+
   changeDepartment() {
     this.deptCourses = [];
 
-    const departmentDocRef = this.database.doc('departments/' + this.selectedDepartment);
+    const departmentDocRef = this.database.doc('departments/' + this.selectedDepartment.code);
     this.database
-      .collection<Courses>('courses', ref => ref.where('department', '==', departmentDocRef.ref))
+      .collection<Course>('courses', ref => ref.where('department', '==', departmentDocRef.ref))
       .get()
       .subscribe(res => {
         res.docs.forEach((doc) => {
@@ -46,16 +53,4 @@ export class CourseSelectionScreenForViewingComponent implements OnInit {
   changeCourse() {
     console.log(this.selectedCourse);
   }
-}
-
-interface Department {
-  title: string;
-  code: string;
-}
-
-interface Courses {
-  id: number;
-  title: string;
-  description: string;
-  department: string;
 }

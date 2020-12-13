@@ -9,7 +9,7 @@
 
   <div>
     <h2 id='course-profile-header'>You're Viewing the Following Course Profile</h2>
-    <h1>CS-336: Web Development</h1>
+    <h1>{{selectedDepartment.code}}-{{selectedCourse.id}}: {{selectedCourse.title}}</h1>
   </div>
 
   <!-- average letter grade displayed here -->
@@ -17,15 +17,14 @@
     <div class="letter-container">
       <h2>Average Letter Grade:</h2>
       <div class="letter">
-        <mat-card class="text">B+</mat-card>
+        <mat-card class="text">{{averageLetter}}</mat-card>
       </div>
     </div>
 
-    <!-- top rated professor displayed here -->
     <div class="prof-container">
       <h2 class="prof-header">Top Professor:</h2>
       <div class="prof">
-        <mat-card class="text">Victor Norman</mat-card>
+        <mat-card class="text">{{topProfessor}}</mat-card>
       </div>
     </div>
   </div>
@@ -35,8 +34,8 @@
     <h2>Top Commendations:</h2>
     <div class="chip-list">
       <mat-chip-list class="example-chip" cdkDropListOrientation="horizontal">
-        <mat-chip *ngFor="let com of commendations">
-          {{com.name}}
+        <mat-chip *ngFor="let com of commendations" class="com-chip">
+          {{com}}
         </mat-chip>
       </mat-chip-list>
     </div>
@@ -47,8 +46,8 @@
     <h2>Top Cautions:</h2>
     <div class="chip-list">
       <mat-chip-list class="example-chip" cdkDropListOrientation="horizontal">
-        <mat-chip *ngFor="let con of concerns">
-          {{con.name}}
+        <mat-chip *ngFor="let con of concerns" class="con-chip">
+          {{con}}
         </mat-chip>
       </mat-chip-list>
     </div>
@@ -58,5 +57,4 @@
   <div class="buttonContainer">
     <a routerLink="/start-screen"><button type="button" class="button">Back to Start</button></a>
   </div>
-
 </div>

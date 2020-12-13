@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from "@angular/fire/firestore";
+import { Course, Department } from '../../customInterfaces';
 import { Router } from '@angular/router';
 import { MatDividerModule } from '@angular/material/divider';
 
@@ -12,10 +13,10 @@ import { MatDividerModule } from '@angular/material/divider';
 export class CourseSelectionScreenForRatingComponent implements OnInit {
 
   public selectedDepartment: Department;
-  public selectedCourse: Courses;
+  public selectedCourse: Course;
 
   departments: Department[] = [];
-  deptCourses: Courses[] = [];
+  deptCourses: Course[] = [];
 
   constructor(private database: AngularFirestore, private router: Router) {
   }
@@ -35,7 +36,7 @@ export class CourseSelectionScreenForRatingComponent implements OnInit {
 
     const departmentDocRef = this.database.doc('departments/' + this.selectedDepartment);
     this.database
-      .collection<Courses>('courses', ref => ref.where('department', '==', departmentDocRef.ref))
+      .collection<Course>('courses', ref => ref.where('department', '==', departmentDocRef.ref))
       .get()
       .subscribe(res => {
         res.docs.forEach((doc) => {
@@ -49,16 +50,4 @@ export class CourseSelectionScreenForRatingComponent implements OnInit {
     console.log(this.selectedCourse);
   }
 
-}
-
-interface Department {
-  title: string;
-  code: string;
-}
-
-interface Courses {
-  id: number;
-  title: string;
-  description: string;
-  department: string;
 }

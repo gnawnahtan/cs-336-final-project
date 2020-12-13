@@ -2,6 +2,7 @@
   background: linear-gradient(to top, white 5%, purple 100%);
   min-height: 100vh;
   min-width: 100%;
+  padding-bottom: 50px;
 }
 
 img {
@@ -178,4 +179,12 @@ p {
 
 .chip-list {
   padding-left: 3vh;
+}
+
+.com-chip {
+  background-color: #81ff41 !important;
+}
+
+.con-chip {
+  background-color: #ff4141 !important;
 }
