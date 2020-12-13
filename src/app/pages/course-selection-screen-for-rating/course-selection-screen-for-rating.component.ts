@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from "@angular/fire/firestore";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-course-selection-screen-for-rating',
@@ -15,7 +16,7 @@ export class CourseSelectionScreenForRatingComponent implements OnInit {
   departments: Department[] = [];
   deptCourses: Courses[] = [];
 
-  constructor(private database: AngularFirestore) {
+  constructor(private database: AngularFirestore, private router: Router) {
   }
 
   ngOnInit(): void {

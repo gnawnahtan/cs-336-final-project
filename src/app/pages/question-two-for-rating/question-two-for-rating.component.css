@@ -4,6 +4,23 @@
   min-width: 100%;
 }
 
+.header {
+  display: flex;
+  justify-content: center;
+  margin-top: 4vh;
+  color: white;
+  font-size: 3vh;
+}
+
+.small {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2vh;
+  color: white;
+  font-size: 1.8vh;
+  margin-bottom: 4vh;
+}
+
 img {
   height: 20%;
   width: 30%;
@@ -22,6 +39,7 @@ img {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  top: 5vh;
 }
 
 .button {
@@ -52,4 +70,34 @@ img {
 
 .chip-selected {
   background-color: #fdca4f !important;
+}
+
+.chip-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3.5vh;
+}
+
+.center-items {
+  text-align: center;
+}
+
+.example-chip {
+  width: 60%;
+}
+
+.material-icons {
+  font-size: 36px;
+  color: white;
+  position: fixed;
+  bottom: 91vh;
+  left: 18%;
+}
+.material-icons:hover {
+  font-size: 36px;
+  color: pink;
+  position: fixed;
+  bottom: 91vh;
+  left: 18%;
+  cursor: pointer;
 }
