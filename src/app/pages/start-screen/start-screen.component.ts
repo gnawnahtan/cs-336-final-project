@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
+import { LogOutDialogComponent } from 'src/app/components/log-out-dialog/log-out-dialog.component';
 
 @Component({
   selector: 'app-start-screen',
@@ -14,27 +15,9 @@ export class StartScreenComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // opens up the log out dialog component
   popup() {
-    const dialogRef = this.dialog.open(DialogContent);
-  }
-
-}
-
-@Component({
-  selector: 'dialog-content',
-  templateUrl: 'dialog-content.html',
-})
-export class DialogContent{
-
-  constructor(public dialog: MatDialogRef<DialogContent>, private router: Router) {}
-
-  close(): void {
-    this.dialog.close();
-  }
-
-  logOut(): void {
-    this.dialog.close();
-    this.router.navigate([`${'/login-screen'}`]);
+    const dialogRef = this.dialog.open(LogOutDialogComponent);
   }
 
 }

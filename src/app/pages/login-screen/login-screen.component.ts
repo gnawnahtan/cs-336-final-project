@@ -9,6 +9,7 @@ import * as firebase from 'firebase';
 })
 export class LoginScreenComponent implements OnInit {
 
+  // visibility of password - show/hide
   public visibility: boolean = false;
 
   constructor(private firestore: AngularFirestore) { }

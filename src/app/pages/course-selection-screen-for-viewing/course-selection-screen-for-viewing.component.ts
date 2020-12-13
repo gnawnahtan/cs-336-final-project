@@ -8,6 +8,7 @@ import { AngularFirestore } from "@angular/fire/firestore";
 })
 export class CourseSelectionScreenForViewingComponent implements OnInit {
 
+  // to be used in html file for ngIf displays
   public selectedDepartment: Department;
   public selectedCourse: Courses;
 
