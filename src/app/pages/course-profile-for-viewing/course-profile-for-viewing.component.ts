@@ -15,6 +15,7 @@ export class CourseProfileForViewingComponent implements OnInit {
   averageGrade : number = 0;
   averageLetter : string = '?';
   professors : Professor[] = [];
+  topProfessor : string = "";
 
   commendations : string[] = [];
   concerns : string[] = [];
@@ -58,7 +59,10 @@ export class CourseProfileForViewingComponent implements OnInit {
       
       for(const prop in profCounts) {
         this.database.collection<Professor>('professors').doc(prop).get()
-          .subscribe(res => this.professors.push(res.data()));
+          .subscribe(async res => {
+            await this.professors.push(res.data());
+            this.topProfessor = this.professors[0].firstName + " " + this.professors[0].lastName;
+          });
       }
 
       this.courseRatings.forEach(element => {
