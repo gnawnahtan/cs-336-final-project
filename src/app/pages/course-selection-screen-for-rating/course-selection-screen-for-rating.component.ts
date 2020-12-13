@@ -21,6 +21,14 @@ export class CourseSelectionScreenForRatingComponent implements OnInit {
   constructor(private database: AngularFirestore, private router: Router) {
   }
 
+  goToNext() {
+    this.router.navigate([`${'/question-one-for-rating'}`]);
+  }
+
+  goBack() {
+    this.router.navigate([`${'/start-screen'}`]);
+  }
+
   ngOnInit(): void {
     this.database.collection<Department>('departments')
       .get()

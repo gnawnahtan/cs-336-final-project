@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +11,7 @@ export class RegisterComponent implements OnInit {
   // visibility of password - show/hide
   public visibility: boolean = false;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
   }
@@ -18,6 +19,10 @@ export class RegisterComponent implements OnInit {
   // toggle visibility of password
   showPassword(): void {
     this.visibility = !this.visibility
+  }
+
+  goToLogin() {
+    this.router.navigate([`${'/login-screen'}`]);
   }
 
 }

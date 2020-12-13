@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 import * as firebase from 'firebase';
 
 @Component({
@@ -12,7 +13,7 @@ export class LoginScreenComponent implements OnInit {
   // visibility of password - show/hide
   public visibility: boolean = false;
 
-  constructor(private firestore: AngularFirestore) { }
+  constructor(private firestore: AngularFirestore, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +26,14 @@ export class LoginScreenComponent implements OnInit {
     //   firstName: 'Keith',
     //   lastName: 'Vander Linden',
     // });
+  }
+
+  goToStart() {
+    this.router.navigate([`${'/start-screen'}`]);
+  }
+
+  goToRegister() {
+    this.router.navigate([`${'/register'}`]);
   }
 
   // toggle visibility of password

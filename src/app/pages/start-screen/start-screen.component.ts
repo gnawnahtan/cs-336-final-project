@@ -15,6 +15,14 @@ export class StartScreenComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  goToRate() {
+    this.router.navigate([`${'/course-selection-screen-for-rating'}`]);
+  }
+
+  goToView() {
+    this.router.navigate([`${'/course-selection-screen-for-viewing'}`]);
+  }
+
   // opens up the log out dialog component
   popup() {
     const dialogRef = this.dialog.open(LogOutDialogComponent);
