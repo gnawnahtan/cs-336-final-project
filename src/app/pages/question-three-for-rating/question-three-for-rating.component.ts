@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionThreeForRatingComponent implements OnInit {
 
+  // array of concerns - to be displayed in angular material chips
   concerns : Concern[] = [
     {name: 'Lots of homework', selected: false},
     {name: 'Hard grading', selected: false},

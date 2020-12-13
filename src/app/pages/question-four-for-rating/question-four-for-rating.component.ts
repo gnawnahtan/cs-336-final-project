@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { RotateProp } from '@fortawesome/fontawesome-svg-core';
+import { ReviewDialogComponent } from 'src/app/components/review-dialog/review-dialog.component';
 import { StartScreenComponent } from '../start-screen/start-screen.component';
 
 interface Grade {
@@ -16,6 +17,7 @@ interface Grade {
 })
 export class QuestionFourForRatingComponent implements OnInit {
 
+  // to be used in html file to ensure letter grade is selected before button displayed
   public selectedGrade: string;
 
   constructor(public dialog: MatDialog) { }
@@ -37,24 +39,8 @@ export class QuestionFourForRatingComponent implements OnInit {
     {letter: 'F', viewLetter: 'F'},
   ];
 
+  // Review Dialog component opened when user submits his review
   popup() {
-    const dialogRef = this.dialog.open(DialogContent);
+    const dialogRef = this.dialog.open(ReviewDialogComponent);
   }
 }
-
-@Component({
-  selector: 'dialog-content',
-  templateUrl: 'dialog-content.html',
-})
-export class DialogContent{
-
-  constructor(public dialog: MatDialogRef<DialogContent>, private router: Router) {}
-
-  close(): void {
-    this.dialog.close();
-    this.router.navigate([`${'/start-screen'}`]);
-  }
-
-}
-
-

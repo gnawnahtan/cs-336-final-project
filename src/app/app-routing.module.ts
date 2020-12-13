@@ -8,7 +8,6 @@ import { QuestionFourForRatingComponent } from './pages/question-four-for-rating
 import { QuestionOneForRatingComponent } from './pages/question-one-for-rating/question-one-for-rating.component';
 import { QuestionThreeForRatingComponent } from './pages/question-three-for-rating/question-three-for-rating.component';
 import { QuestionTwoForRatingComponent } from './pages/question-two-for-rating/question-two-for-rating.component';
-import { RateCourseScreenComponent } from './pages/rate-course-screen/rate-course-screen.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { StartScreenComponent } from './pages/start-screen/start-screen.component';
 
@@ -16,7 +15,6 @@ const routes: Routes = [
   { path: "login-screen", component: LoginScreenComponent },
   { path: "start-screen", component: StartScreenComponent },
   { path: "course-selection-screen-for-rating", component: CourseSelectionScreenForRatingComponent },
-  { path: "rate-course-screen", component: RateCourseScreenComponent },
   { path: "course-selection-screen-for-viewing", component: CourseSelectionScreenForViewingComponent },
   { path: "course-profile-for-viewing", component: CourseProfileForViewingComponent },
   { path: "register", component: RegisterComponent },

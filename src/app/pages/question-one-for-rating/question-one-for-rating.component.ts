@@ -13,6 +13,7 @@ interface Professor{
 })
 export class QuestionOneForRatingComponent implements OnInit {
 
+  // to be used in html file to know when professor item in dropdown has been selected
   public selectedProfessor: string;
 
   constructor(private router: Router) {}
@@ -25,9 +26,5 @@ export class QuestionOneForRatingComponent implements OnInit {
     {name: 'Victor Norman', viewName: 'Victor Norman'},
     {name: 'Joel Adams', viewName: 'Joel Adams'},
   ];
-
-  back(): void {
-    this.router.navigate([`${'/course-selection-screen-for-rating'}`]);
-  }
 
 }

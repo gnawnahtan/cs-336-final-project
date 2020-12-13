@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RateCourseScreenComponent } from './rate-course-screen.component';
+import { ReviewDialogComponent } from './review-dialog.component';
 
-describe('RateCourseScreenComponent', () => {
-  let component: RateCourseScreenComponent;
-  let fixture: ComponentFixture<RateCourseScreenComponent>;
+describe('ReviewDialogComponent', () => {
+  let component: ReviewDialogComponent;
+  let fixture: ComponentFixture<ReviewDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RateCourseScreenComponent ]
+      declarations: [ ReviewDialogComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RateCourseScreenComponent);
+    fixture = TestBed.createComponent(ReviewDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
