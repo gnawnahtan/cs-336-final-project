@@ -20,7 +20,7 @@ export class CourseProfileForViewingComponent implements OnInit {
   commendations : string[] = [];
   concerns : string[] = [];
 
-  static letterGrades = [
+  static letterGrades : Grade[] = [
     {grade: 4, letter: 'A'}, {grade: 3.7, letter: 'A-'},
     {grade: 3.3, letter: 'B+'}, {grade: 3.0, letter: 'B'}, {grade: 2.7, letter: 'B-'},
     {grade: 2.3, letter: 'C+'}, {grade: 2.0, letter: 'C'}, {grade: 1.7, letter: 'C-'},
@@ -85,4 +85,9 @@ export class CourseProfileForViewingComponent implements OnInit {
 
     return letter;
   }
+}
+
+interface Grade {
+  grade : number;
+  letter : string;
 }
