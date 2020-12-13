@@ -3,20 +3,24 @@
     <div class="image">
       <img src="assets/RateMyCourse.png">
     </div>
+    <a routerLink="/question-one-for-rating"><mat-icon class="material-icons">arrow_back</mat-icon></a>
   </a>
 
   <div class="barContainer">
     <mat-progress-bar color="accent" mode="buffer" value="50"></mat-progress-bar>
   </div>
 
-  <p>Question 2: Commendations</p>
+  <p class="header">Question 2: Commendations</p>
+  <p class="small">Select all that apply</p>
 
   <div class="chip-list">
     <mat-chip-list class="example-chip" cdkDropListOrientation="horizontal">
+      <div class="center-items">
       <mat-chip *ngFor="let com of commendations" (click)="com.selected = !com.selected"
         [ngClass]="(com.selected) ? 'chip-selected' : 'chip-unselected'">
         {{com.name}}
       </mat-chip>
+    </div>
     </mat-chip-list>
   </div>
 

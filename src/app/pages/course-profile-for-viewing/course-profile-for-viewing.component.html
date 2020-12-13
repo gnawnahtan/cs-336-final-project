@@ -4,16 +4,52 @@
       <img src="assets/RateMyCourse.png">
     </div>
   </a>
+
   <div>
     <h2 id='course-profile-header'>You're Viewing the Following Course Profile</h2>
     <h1>CS-336: Web Development</h1>
   </div>
-  <h2>Average letter grade: </h2>
-  <mat-card class='letter-grade-card'>
-    <mat-card-title id='letter-grade-text'>B+</mat-card-title>
-  </mat-card>
-  <h2>Students' Favourite Professor for this Course</h2>
-  <mat-card>
-    <mat-card-title>Victor Norman</mat-card-title>
-  </mat-card>
+
+  <div class="box-container">
+    <div class="letter-container">
+      <h2>Average Letter Grade:</h2>
+      <div class="letter">
+        <mat-card class="text">B+</mat-card>
+      </div>
+    </div>
+
+    <div class="prof-container">
+      <h2 class="prof-header">Top Professor:</h2>
+      <div class="prof">
+        <mat-card class="text">Victor Norman</mat-card>
+      </div>
+    </div>
+  </div>
+
+  <div class="chip-container">
+    <h2>Top Commendations:</h2>
+    <div class="chip-list">
+      <mat-chip-list class="example-chip" cdkDropListOrientation="horizontal">
+        <mat-chip *ngFor="let com of commendations">
+          {{com.name}}
+        </mat-chip>
+      </mat-chip-list>
+    </div>
+  </div>
+
+  <div class="chip2-container">
+    <h2>Top Cautions:</h2>
+    <div class="chip-list">
+      <mat-chip-list class="example-chip" cdkDropListOrientation="horizontal">
+        <mat-chip *ngFor="let con of concerns">
+          {{con.name}}
+        </mat-chip>
+      </mat-chip-list>
+    </div>
+  </div>
+
+  <div class="buttonContainer">
+    <a routerLink="/start-screen"><button type="button" class="button">Back to Start</button></a>
+  </div>
+
 </div>

@@ -23,7 +23,7 @@ h1 {
 .buttonContainer {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .button {
@@ -57,12 +57,17 @@ h1 {
 .material-icons {
   font-size: 36px;
   color: white;
-  display: inline-block;
-  text-transform: none;
-  white-space: nowrap;
   position: fixed;
   bottom: 91vh;
   left: 18%;
+}
+.material-icons:hover {
+  font-size: 36px;
+  color: pink;
+  position: fixed;
+  bottom: 91vh;
+  left: 18%;
+  cursor: pointer;
 }
 
 .dialogButton {

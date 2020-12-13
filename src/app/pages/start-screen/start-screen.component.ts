@@ -14,10 +14,6 @@ export class StartScreenComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  logOut(): void {
-    this.router.navigate([`${'/login-screen'}`]);
-  }
-
   popup() {
     const dialogRef = this.dialog.open(DialogContent);
   }

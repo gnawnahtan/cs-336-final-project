@@ -12,34 +12,27 @@ img {
   margin-right: auto;
   padding-bottom: 2%;
 }
+
 #course-profile-header {
   text-align: center;
+  font-size: 3vh;
 }
+
 h1 {
-  font-size: 3em;
+  font-size: 5vh;
   margin-top: 2%;
   margin-bottom: 2%;
   text-align: center;
   line-height: 50px;
+  color: white;
 }
+
 h2 {
   /* font-size: 3vw; */
 }
+
 p {
   /* font: 2vw; */
-}
-.letter-grade-card {
-  min-height: 75px;
-  min-width: 75px;
-  height: 15%;
-  width: 15%;
-  text-align: center;
-}
-
-#letter-grade-text {
-  font-size: 5vw;
-  color: blue;
-  margin: 25%;
 }
 
 .mat-card-title {
@@ -53,7 +46,7 @@ p {
 .buttonContainer {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-top: 8vh;
 }
 
 .button {
@@ -92,4 +85,97 @@ p {
 :host ::ng-deep mat-option {
   font-weight: bold;
   color: white;
+}
+
+.letter-grade-card {
+  min-height: 75px;
+  min-width: 75px;
+  height: 15%;
+  width: 15%;
+  text-align: center;
+}
+
+#letter-grade-text {
+  font-size: 5vw;
+  color: black;
+}
+
+.prof-grade-card {
+  min-height: 75px;
+  min-width: 75px;
+  height: 10vh;
+  width: 20vh;
+  text-align: center;
+}
+
+#prof-grade-text {
+  font-size: 3vw;
+  color: black;
+  margin: 25%;
+}
+
+.letter-box {
+  display: inline;
+  float: left;
+  margin-left: 30vh;
+}
+
+.prof-box {
+  display: inline;
+  float: right;
+  margin-right: 30vh;
+}
+
+.letter-container {
+  float: left;
+  padding-right: 10%;
+}
+
+.letter {
+  display: flex;
+  justify-content: center;
+}
+
+.prof-container {
+  float: left;
+}
+
+.prof {
+  display: flex;
+  justify-content: center;
+}
+
+.prof-header {
+  display: flex;
+  justify-content: center;
+}
+
+.text {
+  font-weight: bold;
+  font-size: 5vh;
+}
+
+.box-container {
+  display: flex;
+  justify-content: center;
+}
+
+.chip-selected {
+  background-color: #fdca4f !important;
+}
+
+.chip-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+}
+
+.chip2-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1vh;
+}
+
+.chip-list {
+  padding-left: 3vh;
 }
