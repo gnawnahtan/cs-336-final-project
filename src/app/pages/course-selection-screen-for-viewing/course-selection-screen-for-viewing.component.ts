@@ -10,6 +10,7 @@ import { DataService } from '../../dataservice';
 })
 export class CourseSelectionScreenForViewingComponent implements OnInit {
 
+  // to be used in html file for ngIf displays
   public selectedDepartment: Department;
   public selectedCourse: Course;
 

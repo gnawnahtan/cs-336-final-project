@@ -6,12 +6,10 @@ import { AppComponent } from './app.component';
 import { LoginScreenComponent } from './pages/login-screen/login-screen.component';
 import { StartScreenComponent } from './pages/start-screen/start-screen.component';
 import { CourseSelectionScreenForRatingComponent } from './pages/course-selection-screen-for-rating/course-selection-screen-for-rating.component';
-import { RateCourseScreenComponent } from './pages/rate-course-screen/rate-course-screen.component';
 import { CourseSelectionScreenForViewingComponent } from './pages/course-selection-screen-for-viewing/course-selection-screen-for-viewing.component';
 import { CourseProfileForViewingComponent } from './pages/course-profile-for-viewing/course-profile-for-viewing.component';
 import { RouterModule } from '@angular/router';
 import { RegisterComponent } from './pages/register/register.component';
-import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { MatSelectModule } from '@angular/material/select';
@@ -31,7 +29,8 @@ import { QuestionOneForRatingComponent } from './pages/question-one-for-rating/q
 import { QuestionTwoForRatingComponent } from './pages/question-two-for-rating/question-two-for-rating.component';
 import { QuestionThreeForRatingComponent } from './pages/question-three-for-rating/question-three-for-rating.component';
 import { QuestionFourForRatingComponent } from './pages/question-four-for-rating/question-four-for-rating.component';
-import { DialogComponent } from './component/dialog/dialog.component';
+import { LogOutDialogComponent } from './components/log-out-dialog/log-out-dialog.component';
+import { ReviewDialogComponent } from './components/review-dialog/review-dialog.component';
 
 @NgModule({
   declarations: [
@@ -39,16 +38,15 @@ import { DialogComponent } from './component/dialog/dialog.component';
     LoginScreenComponent,
     StartScreenComponent,
     CourseSelectionScreenForRatingComponent,
-    RateCourseScreenComponent,
     CourseSelectionScreenForViewingComponent,
     CourseProfileForViewingComponent,
     RegisterComponent,
-    DropdownComponent,
     QuestionOneForRatingComponent,
     QuestionTwoForRatingComponent,
     QuestionThreeForRatingComponent,
     QuestionFourForRatingComponent,
-    DialogComponent,
+    LogOutDialogComponent,
+    ReviewDialogComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [

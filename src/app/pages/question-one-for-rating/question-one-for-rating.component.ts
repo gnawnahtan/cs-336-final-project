@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 interface Professor{
   name: string;
   viewName: string
@@ -11,9 +13,10 @@ interface Professor{
 })
 export class QuestionOneForRatingComponent implements OnInit {
 
+  // to be used in html file to know when professor item in dropdown has been selected
   public selectedProfessor: string;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
   }

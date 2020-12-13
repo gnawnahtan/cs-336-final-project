@@ -1,15 +1,22 @@
+<!-- Question 4 html file -->
 
 <div class="container">
   <a routerLink="/start-screen">
     <div class="image">
       <img src="assets/RateMyCourse.png">
     </div>
+    <!-- back icon -->
+    <a routerLink="/question-three-for-rating"><mat-icon class="material-icons">arrow_back</mat-icon></a>
   </a>
 
+  <!-- progress bar -->
   <div class="barContainer">
     <mat-progress-bar color="accent" mode="buffer" value="100"></mat-progress-bar>
   </div>
 
+  <p class="header">Question 4: Choose your Letter Grade</p>
+
+  <!-- Angular Material Dropdown-->
   <div class="dropcon">
     <mat-form-field appearance="fill" class="dropdownContainer">
       <mat-label class="placeholder">Letter Grade</mat-label>
@@ -23,6 +30,7 @@
     </mat-form-field>
   </div>
 
+  <!-- only appears when letter grade is selected -->
   <div *ngIf="selectedGrade" class="buttonContainer">
     <button (click)="popup()" type="button" class="button">Submit Rating</button>
   </div>

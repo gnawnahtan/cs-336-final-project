@@ -1,11 +1,17 @@
+<!-- Course Selection for Viewing html file -->
+
 <div class="container">
   <a routerLink="/start-screen">
     <div class="image">
       <img src="assets/RateMyCourse.png">
     </div>
+    <!-- back icon -->
+    <a routerLink="/start-screen"><mat-icon class="material-icons">arrow_back</mat-icon></a>
   </a>
 
+  <p class="header">Choose the Course</p>
 
+  <!-- angular material dropdown for department -->
   <div class="dropcon">
     <mat-form-field appearance="fill" class="dropdownContainer">
       <mat-label class="placeholder">Department</mat-label>
@@ -19,6 +25,7 @@
     </mat-form-field>
   </div>
 
+  <!-- angular material dropdown for course, will only appear when department is selected -->
   <div *ngIf="selectedDepartment" class="dropcon">
     <mat-form-field appearance="fill" class="dropdownContainer">
       <mat-label class="placeholder">Course</mat-label>
@@ -32,6 +39,7 @@
     </mat-form-field>
   </div>
 
+  <!-- will only appear when both department and course are selected -->
   <div *ngIf="selectedCourse && selectedDepartment" class="buttonContainer">
     <a routerLink="/course-profile-for-viewing"><button type="button" class="button">See Rating</button></a>
   </div>

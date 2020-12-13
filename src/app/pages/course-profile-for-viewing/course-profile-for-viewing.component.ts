@@ -16,7 +16,7 @@ export class CourseProfileForViewingComponent implements OnInit {
   averageLetter : string = '?';
   professors : Professor[] = [];
   topProfessor : string = "";
-
+  
   commendations : string[] = [];
   concerns : string[] = [];
 
