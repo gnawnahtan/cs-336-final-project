@@ -40,10 +40,10 @@ export class CourseProfileForViewingComponent implements OnInit {
     this.selectedDepartment.code = this.selectedDepartment.code.toUpperCase();
   }
 
-  async getData() {
+  getData() : void {
     const courseDocRef = this.database.doc('courses/' + this.selectedDepartment.code + '-' + this.selectedCourse.id);
 
-    await this.database
+    this.database
     .collection<Rating>('ratings', ref => ref.where('courseId', '==', courseDocRef.ref))
     .get()
     .subscribe(async res => {
