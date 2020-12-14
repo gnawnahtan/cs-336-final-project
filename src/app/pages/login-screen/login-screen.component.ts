@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 import * as firebase from 'firebase';
 
 @Component({
@@ -11,10 +12,10 @@ export class LoginScreenComponent implements OnInit {
 
   accounts : User[] = [];
 
-  username : string;
-  password : string;
+  username : string = "";
+  password : string = "";
 
-  constructor(private db: AngularFirestore) { }
+  constructor(private db: AngularFirestore, private router: Router) { }
 
   ngOnInit(): void {
     this.db.collection<User>('/users', ref => ref.orderBy('username')).valueChanges({ idField: 'docID' }).subscribe(res => {
@@ -34,17 +35,20 @@ export class LoginScreenComponent implements OnInit {
     
     let exists = false;
     console.log(this.accounts);
+    let username = this.username;
+    let password = this.password;
 
     //this.accounts.forEach(elem => console.log(elem));
 
     exists = this.accounts.some(function (value){
-      console.log(this.username);
-      return value.username === this.username && value.password === this.password;
+      return value.username === username && value.password === password;
     })
 
     console.log(exists);
 
-    return exists;
+    if(exists) {
+      this.router.navigate([`${'/start-screen'}`]);
+    }
   }
 
 
