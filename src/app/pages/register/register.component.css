@@ -95,6 +95,22 @@ h1 {
   top: 2px;
 }
 
+.back-icon {
+  font-size: 4vh;
+  color: white;
+  position: fixed;
+  bottom: 91vh;
+  left: 18%;
+}
+.back-icon:hover {
+  font-size: 4vh;
+  color: pink;
+  position: fixed;
+  bottom: 91vh;
+  left: 18%;
+  cursor: pointer;
+}
+
 .showpass {
   display: flex;
   justify-content: center;
