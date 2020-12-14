@@ -8,12 +8,12 @@
   </div>
 
   <div class="login">
-    <input type="text" id="login" placeholder="Username">
+    <input type="text" class="loginTB" placeholder="Username" [(ngModel)]="username">
     <i class="material-icons">perm_identity</i>
   </div>
 
   <div class="login">
-    <input [type]="visibility ? 'text' : 'password'" id="loginsecond" placeholder="Password">
+    <input [type]="visibility ? 'text' : 'password'" class="loginPA" placeholder="Password" [(ngModel)]="password">
     <i class="material-icons">lock</i>
     <div class="showpass">
       <input type="checkbox" (click)="showPassword()"><p class="little">Show Password</p>
@@ -22,7 +22,7 @@
 
 
   <div class="buttonContainer">
-    <a routerLink="/start-screen"><button type="button" class="button" (click)="login()">Login</button></a>
+    <button type="button" class="button" (click)="login()">Login</button>
   </div>
 
   <div class="textContainer">
@@ -30,7 +30,7 @@
   </div>
 
   <div class="buttonContainer">
-    <a routerLink="/register"><button type="button" class="rbutton">Register</button></a>
+    <button type="button" class="rbutton" (click)="goToRegister()">Register</button>
   </div>
 
 </div>

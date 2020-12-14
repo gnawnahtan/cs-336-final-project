@@ -41,7 +41,7 @@
 
   <!-- will only appear when both department and course are selected -->
   <div *ngIf="selectedCourse && selectedDepartment" class="buttonContainer">
-    <a routerLink="/course-profile-for-viewing"><button type="button" class="button">See Rating</button></a>
+    <button type="button" class="button" (click)="goToNext()">See Rating</button>
   </div>
 
 </div>

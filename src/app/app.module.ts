@@ -31,6 +31,8 @@ import { QuestionThreeForRatingComponent } from './pages/question-three-for-rati
 import { QuestionFourForRatingComponent } from './pages/question-four-for-rating/question-four-for-rating.component';
 import { LogOutDialogComponent } from './components/log-out-dialog/log-out-dialog.component';
 import { ReviewDialogComponent } from './components/review-dialog/review-dialog.component';
+import { LoginDialogComponent } from './components/login-dialog/login-dialog.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { ReviewDialogComponent } from './components/review-dialog/review-dialog.
     QuestionFourForRatingComponent,
     LogOutDialogComponent,
     ReviewDialogComponent,
+    LoginDialogComponent,
+    ConfirmDialogComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [

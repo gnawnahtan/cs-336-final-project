@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from "@angular/fire/firestore";
 import { Course, Department } from "../../customInterfaces";
 import { DataService } from '../../dataservice';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-course-selection-screen-for-viewing',
@@ -17,7 +18,7 @@ export class CourseSelectionScreenForViewingComponent implements OnInit {
   departments: Department[] = [];
   deptCourses: Course[] = [];
 
-  constructor(private database: AngularFirestore, public dataservice: DataService) {
+  constructor(private database: AngularFirestore, public dataservice: DataService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -52,5 +53,10 @@ export class CourseSelectionScreenForViewingComponent implements OnInit {
 
   changeCourse() {
     console.log(this.selectedCourse);
+  }
+
+  // navigate to course viewing screen
+  goToNext() {
+    this.router.navigate([`${'/course-profile-for-viewing'}`]);
   }
 }

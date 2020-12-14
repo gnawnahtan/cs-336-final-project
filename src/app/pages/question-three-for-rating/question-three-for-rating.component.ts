@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Data } from '@angular/router';
 import { DataService } from '../../dataservice';
+import { Data, Router } from '@angular/router';
 
 @Component({
   selector: 'app-question-three-for-rating',
@@ -20,7 +20,7 @@ export class QuestionThreeForRatingComponent implements OnInit {
     { name: 'Hard Tests', selected: false },
   ];
 
-  constructor(public dataservice: DataService) { }
+  constructor(private router: Router, public dataservice: DataService) { }
 
   ngOnInit(): void {
   }
@@ -33,6 +33,12 @@ export class QuestionThreeForRatingComponent implements OnInit {
       }
     })
   }
+
+  // navigate to question four
+  goToNext() {
+    this.router.navigate([`${'/question-four-for-rating'}`]);
+  }
+
 }
 
 interface Concern {

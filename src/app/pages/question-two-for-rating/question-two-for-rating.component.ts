@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../dataservice';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-question-two-for-rating',
@@ -7,7 +8,7 @@ import { DataService } from '../../dataservice';
   styleUrls: ['./question-two-for-rating.component.css']
 })
 export class QuestionTwoForRatingComponent implements OnInit {
-
+  // array of commendations - to be displayed in angular material chips
   commendations: Commendation[] = [
     { name: 'Low homework', selected: false },
     { name: 'Easy grading', selected: false },
@@ -18,7 +19,7 @@ export class QuestionTwoForRatingComponent implements OnInit {
     { name: 'Fun Labs', selected: false },
   ];
 
-  constructor(public dataservice: DataService) { }
+  constructor(public dataservice: DataService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -30,6 +31,11 @@ export class QuestionTwoForRatingComponent implements OnInit {
         this.dataservice.commendations.push(elem.name);
       }
     })
+  }
+
+  // navigate to question three
+  goToNext() {
+    this.router.navigate([`${'/question-three-for-rating'}`]);
   }
 }
 
