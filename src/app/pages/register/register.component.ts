@@ -1,6 +1,8 @@
 import { Component, OnInit, } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDialogComponent } from 'src/app/components/confirm-dialog/confirm-dialog.component';
 
 
 @Component({
@@ -13,7 +15,7 @@ export class RegisterComponent implements OnInit {
   username: string;
   password: string;
 
-  constructor(private router: Router, private db: AngularFirestore) { }
+  constructor(private router: Router, private db: AngularFirestore, public dialog: MatDialog) { }
 
   // visibility of password - show/hide
   public visibility: boolean = false;
@@ -41,6 +43,7 @@ export class RegisterComponent implements OnInit {
     {
     this.db.collection('users').add(data);
     }
+    const dialogRef = this.dialog.open(ConfirmDialogComponent);
     this.goToLogin();
   }
 
