@@ -17,7 +17,7 @@
       <mat-label class="placeholder">Department</mat-label>
       <mat-select class="color" [(ngModel)]="selectedDepartment" (selectionChange)="changeDepartment()">
         <mat-option>None of these</mat-option>
-        <mat-option *ngFor="let dept of departments" [value]="dept.code">
+        <mat-option *ngFor="let dept of departments" [value]="dept">
           {{dept.title}}
           <mat-divider></mat-divider>
         </mat-option>

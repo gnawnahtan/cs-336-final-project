@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from "@angular/fire/firestore";
+import { Department, Professor } from "../../customInterfaces";
+import { DataService } from '../../dataservice';
 import { Router } from '@angular/router';
-
-interface Professor{
-  name: string;
-  viewName: string
-}
 
 @Component({
   selector: 'app-question-one-for-rating',
@@ -14,19 +12,31 @@ interface Professor{
 export class QuestionOneForRatingComponent {
 
   // to be used in html file to know when professor item in dropdown has been selected
-  public selectedProfessor: string;
+  public selectedProfessor: Professor;
+  public selectedDepartment: Department;
 
-  constructor(private router: Router) {}
+  professors: Professor[] = [];
+  constructor(private router: Router,
+    private database: AngularFirestore,
+    public dataservice: DataService) { }
 
-  // navigate to question two
+  ngOnInit(): void {
+    this.selectedDepartment = this.dataservice.department;
+    const departmentDocRef = this.database.doc('departments/' + this.selectedDepartment.code);
+    this.database.collection<Professor>('professors', ref => ref.where('department', '==', departmentDocRef.ref))
+      .get()
+      .subscribe(res => {
+        res.docs.forEach((doc) => {
+          this.professors.push(doc.data());
+        });
+      });
+
   goToNext() {
     this.router.navigate([`${'/question-two-for-rating'}`]);
   }
 
-  professors: Professor[] = [
-    {name: 'Keith Vander Linden', viewName: 'Keith Vander Linden'},
-    {name: 'Victor Norman', viewName: 'Victor Norman'},
-    {name: 'Joel Adams', viewName: 'Joel Adams'},
-  ];
-
+  ngOnDestroy() {
+    this.dataservice.professor = this.selectedProfessor;
+  }
 }
+
