@@ -60,8 +60,8 @@ export class QuestionFourForRatingComponent implements OnInit {
       + this.dataservice.course.id).ref : null),
       grade: (this.grade ? this.grade : 0),
       professor: (this.dataservice.professor ? 
-        this.dataservice.professor.firstName.substr(0, 3) +
-        this.dataservice.professor.lastName.substr(0, 3) : ''),
+        this.dataservice.professor.firstName.substr(0, 3).toLowerCase() +
+        this.dataservice.professor.lastName.substr(0, 3).toLowerCase() : ''),
       user: '',
     }
 
