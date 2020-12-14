@@ -10,7 +10,7 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 2%;
+  padding-bottom: 2.2%;
 }
 
 h1 {
@@ -22,13 +22,15 @@ h1 {
 
 .login {
   text-align: center;
+  padding-left: 2vh;
 }
 
 .loginTB {
+  color: purple;
   height: 50px;
   width: 30%;
   margin-top: 2vh;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   font-size: 30px;
   border-radius: 20px;
   background: linear-gradient(to bottom, white 5%, pink 100%);
@@ -36,12 +38,15 @@ h1 {
 }
 
 .loginTB:hover {
+  color: purple;
   height: 50px;
-  background-color: pink;
-  margin-bottom: 20px;
+  width: 30%;
+  margin-top: 2vh;
+  margin-bottom: 5px;
   font-size: 30px;
   border-radius: 20px;
   background: linear-gradient(to top, white 5%, pink 100%);
+  text-indent: 10px;
 }
 
 .buttonContainer {
@@ -74,6 +79,7 @@ h1 {
 }
 
 ::placeholder {
+  font-size: 3.4vh;
   color: purple;
   opacity: 0.5;
 }
@@ -87,4 +93,15 @@ h1 {
   position: relative;
   left: -40px;
   top: 2px;
+}
+
+.showpass {
+  display: flex;
+  justify-content: center;
+}
+
+.little {
+  font-size: small;
+  padding-left: 3px;
+  color: purple;
 }

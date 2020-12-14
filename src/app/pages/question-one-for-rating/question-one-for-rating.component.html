@@ -1,29 +1,39 @@
-<div class="container">
-  <div class="image">
-    <img src="assets/RateMyCourse.png">
-  </div>
+<!-- Question 1 html file -->
 
+<div class="container">
+  <a routerLink="/start-screen">
+    <div class="image">
+      <img src="assets/RateMyCourse.png">
+    </div>
+    <!-- back icon -->
+    <a routerLink="/course-selection-screen-for-rating">
+      <mat-icon class="material-icons">arrow_back</mat-icon>
+    </a>
+  </a>
+
+  <!-- progress bar -->
   <div class="barContainer">
     <mat-progress-bar color="accent" mode="buffer" value="25"></mat-progress-bar>
   </div>
 
+  <p>Question 1: Which professor did you have?</p>
+
+  <!-- Angular Material Dropdown -->
   <div class="dropcon">
     <mat-form-field appearance="fill" class="dropdownContainer">
-      <mat-label class="placeholder">Select Professor</mat-label>
+      <mat-label class="placeholder">Professor</mat-label>
       <mat-select class="color" [(ngModel)]="selectedProfessor">
         <mat-option>None of these</mat-option>
-        <mat-option *ngFor="let prof of professors" [value]="prof.name">
-          {{prof.viewName}}
+        <mat-option *ngFor="let prof of professors" [value]="prof.firstName">
+          {{prof.firstName}} {{prof.lastName}}
+          <mat-divider></mat-divider>
         </mat-option>
       </mat-select>
     </mat-form-field>
   </div>
 
   <div *ngIf="selectedProfessor" class="buttonContainer">
-    <a routerLink="/question-two-for-rating"><button type="button" class="button">Next</button></a>
+    <button type="button" class="button" (click)="goToNext()">Next</button>
   </div>
 
 </div>
-
-
-

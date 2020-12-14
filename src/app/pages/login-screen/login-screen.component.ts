@@ -9,7 +9,6 @@ import * as firebase from 'firebase';
   styleUrls: ['./login-screen.component.css']
 })
 export class LoginScreenComponent implements OnInit {
-
   accounts : User[] = [];
 
   //generate objects to later be pushed to the database
@@ -17,6 +16,10 @@ export class LoginScreenComponent implements OnInit {
   password : string = "";
 
   constructor(private db: AngularFirestore, private router: Router) { }
+  
+  // visibility of password - show/hide
+  public visibility: boolean = false;
+
 
   ngOnInit(): void {
     //Essentially the same code from the chat app, clones a specific collection from the database and stores it in a local variable to be parsed.
@@ -50,9 +53,21 @@ export class LoginScreenComponent implements OnInit {
     }
   }
 
+  // navigate to start screen
+  goToStart() {
+    this.router.navigate([`${'/start-screen'}`]);
+  }
 
+  // navigate to registration screen
+  goToRegister() {
+    this.router.navigate([`${'/register'}`]);
+  }
+
+  // toggle visibility of password
+  showPassword(): void {
+    this.visibility = !this.visibility
+  }
 }
-
 interface User {
   username: string,
   password: string

@@ -1,14 +1,24 @@
+<!-- Start Screen html file -->
+
 <div class="container">
-  <div class="image">
-    <img src="assets/RateMyCourse.png">
+
+  <span>
+    <a routerLink="/start-screen">
+      <div class="image">
+        <img src="assets/RateMyCourse.png">
+      </div>
+    </a>
+    <!-- log out icon -->
+    <mat-icon (click)="popup()" class="material-icons">settings</mat-icon>
+  </span>
+
+
+  <div class="buttonContainer">
+    <button type="button" class="button" (click)="goToRate()">Rate a Course</button>
   </div>
 
   <div class="buttonContainer">
-    <a routerLink="/course-selection-screen-for-rating"><button type="button" class="button">Rate a Course</button></a>
-  </div>
-
-  <div class="buttonContainer">
-    <a routerLink="/course-selection-screen-for-viewing"><button type="button" class="button">View a Course Rating</button></a>
+    <button type="button" class="button" (click)="goToView()">View a Course Rating</button>
   </div>
 
 

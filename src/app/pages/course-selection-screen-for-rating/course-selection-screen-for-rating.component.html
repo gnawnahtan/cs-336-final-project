@@ -1,72 +1,47 @@
-<div class="container">
-  <div class="image">
-    <img src="assets/RateMyCourse.png">
-  </div>
+<!-- Course Selection for Rating html file -->
 
+<div class="container">
+  <a routerLink="/start-screen">
+    <div class="image">
+      <img src="assets/RateMyCourse.png">
+    </div>
+    <!-- back icon-->
+    <mat-icon class="material-icons" (click)="goBack()">arrow_back</mat-icon>
+  </a>
+
+  <p class="header">Choose the Course</p>
+
+  <!-- angular material dropdown for department -->
   <div class="dropcon">
     <mat-form-field appearance="fill" class="dropdownContainer">
       <mat-label class="placeholder">Department</mat-label>
-      <mat-select class="color" [(ngModel)]="selectedDepartment">
+      <mat-select class="color" [(ngModel)]="selectedDepartment" (selectionChange)="changeDepartment()">
         <mat-option>None of these</mat-option>
-        <mat-option *ngFor="let dept of departments" [value]="dept.title">
+        <mat-option *ngFor="let dept of departments" [value]="dept">
           {{dept.title}}
+          <mat-divider></mat-divider>
         </mat-option>
       </mat-select>
     </mat-form-field>
   </div>
-  <!-- code below added by NW -->
-  <!--
-  <div *ngFor="let course of courses" class="dropcon">
+
+  <!-- angular material dropdown for course -->
+  <div *ngIf="selectedDepartment" class="dropcon">
     <mat-form-field appearance="fill" class="dropdownContainer">
       <mat-label class="placeholder">Course</mat-label>
-      <mat-select [(ngModel)]="selectedCourse">
+      <mat-select [(ngModel)]="selectedCourse" (selectionChange)="changeCourse()">
         <mat-option>None of these</mat-option>
-        <mat-option *ngIf="(course.department == 'department')" [value]="course.name">
+        <mat-option *ngFor="let course of deptCourses" [value]="course.id">
           {{course.id}}: {{course.title}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div> -->
-
-  <div *ngIf="selectedDepartment=='Communication'" class="dropcon">
-    <mat-form-field appearance="fill" class="dropdownContainer">
-      <mat-label class="placeholder">Course</mat-label>
-      <mat-select [(ngModel)]="selectedCourse">
-        <mat-option>None of these</mat-option>
-        <mat-option *ngFor="let course of courses" [value]="course.title">
-          {{course.id}}: {{course.title}}
+          <mat-divider></mat-divider>
         </mat-option>
       </mat-select>
     </mat-form-field>
   </div>
 
-  <!--
-  <div *ngIf="selectedDepartment=='Math'" class="dropcon">
-    <mat-form-field appearance="fill" class="dropdownContainer">
-      <mat-label class="placeholder">Course</mat-label>
-      <mat-select [(ngModel)]="selectedCourse">
-        <mat-option>None of these</mat-option>
-        <mat-option *ngFor="let course of mathCourses" [value]="course.name">
-          {{course.viewName}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-
-  <div *ngIf="selectedDepartment=='Engineering'" class="dropcon">
-    <mat-form-field appearance="fill" class="dropdownContainer">
-      <mat-label class="placeholder">Course</mat-label>
-      <mat-select [(ngModel)]="selectedCourse">
-        <mat-option>None of these</mat-option>
-        <mat-option *ngFor="let course of engrCourses" [value]="course.name">
-          {{course.viewName}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div> -->
-
+  <!-- will only appear when both department and course are selected -->
   <div *ngIf="selectedCourse && selectedDepartment" class="buttonContainer">
-    <a routerLink="/question-one-for-rating"><button type="button" class="button">Rate this Course</button></a>
+    <button type="button" class="button" (click)="goToNext()">Rate this Course</button>
   </div>
 
 </div>

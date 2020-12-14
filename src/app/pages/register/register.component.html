@@ -1,7 +1,10 @@
+<!-- Registration Screen html file -->
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+
 <div class="container">
+
   <div class="image">
     <img src="assets/RateMyCourse.png">
   </div>
@@ -10,9 +13,14 @@
     <input type="text" class="loginTB" placeholder="Username" [(ngModel)]="username">
     <i class="material-icons">perm_identity</i>
   </div>
+
   <div class="login">
-    <input type="text" class="loginTB" placeholder="Password" [(ngModel)]="password">
+    <input [type]="visibility ? 'text' : 'password'" class="loginTB" placeholder="Password" [(ngModel)]="password">
+
     <i class="material-icons">lock</i>
+    <div class="showpass">
+      <input type="checkbox" (click)="showPassword()"><p class="little">Show Password</p>
+    </div>
   </div>
 
   <div class="buttonContainer">

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from "@angular/fire/firestore";
-import { AngularFireModule } from '@angular/fire';
-import { ActivatedRouteSnapshot } from '@angular/router';
+import { Course, Department } from '../../customInterfaces';
+import { Router } from '@angular/router';
+import { DataService } from '../../dataservice';
+import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'app-course-selection-screen-for-rating',
@@ -11,13 +13,25 @@ import { ActivatedRouteSnapshot } from '@angular/router';
 
 export class CourseSelectionScreenForRatingComponent implements OnInit {
 
-  public selectedDepartment: string;
-  public selectedCourse: string;
+  public selectedDepartment: Department;
+  public selectedCourse: Course;
 
   departments: Department[] = [];
-  courses: Courses[] = [];
+  deptCourses: Course[] = [];
 
-  constructor(private database: AngularFirestore) {
+  constructor(private database: AngularFirestore,
+    private router: Router,
+    public dataservice: DataService) {
+  }
+
+  // navigate to first question
+  goToNext() {
+    this.router.navigate([`${'/question-one-for-rating'}`]);
+  }
+
+  // navigate back to start screen
+  goBack() {
+    this.router.navigate([`${'/start-screen'}`]);
   }
 
   ngOnInit(): void {
@@ -28,41 +42,29 @@ export class CourseSelectionScreenForRatingComponent implements OnInit {
           this.departments.push(doc.data());
         });
       });
-    this.database.collection<Courses>('courses')
+  }
+
+  ngOnDestroy() {
+    this.dataservice.course = this.selectedCourse;
+    this.dataservice.department = this.selectedDepartment;
+  }
+
+  changeDepartment() {
+    this.deptCourses = [];
+    const departmentDocRef = this.database.doc('departments/' + this.selectedDepartment.code);
+    this.database
+      .collection<Course>('courses', ref => ref.where('department', '==', departmentDocRef.ref))
       .get()
       .subscribe(res => {
         res.docs.forEach((doc) => {
-          this.courses.push(doc.data());
+          this.deptCourses.push(doc.data());
+          console.log(this.deptCourses);
         });
       });
   }
 
-  // testing for bongo's sake
+  changeCourse() {
+    console.log(this.selectedCourse);
+  }
 
-
-  // csCourses: Course[] = [
-  //   { name: 'CS 108', viewName: 'CS 108' },
-  //   { name: 'CS 112', viewName: 'CS 112' },
-  //   { name: 'CS 212', viewName: 'CS 212' },
-  // ];
-  // mathCourses: Course[] = [
-  //   { name: 'Math 251', viewName: 'Math 251' },
-  //   { name: 'Math 252', viewName: 'Math 252' },
-  //   { name: 'Stat 243', viewName: 'Stat 243' },
-  // ];
-  // engrCourses: Course[] = [
-  //   { name: 'Engr 220', viewName: 'Engr 220' },
-  // ];
-
-}
-
-interface Department {
-  title: string;
-}
-
-interface Courses {
-  id: number;
-  title: string;
-  description: string;
-  department: string;
 }

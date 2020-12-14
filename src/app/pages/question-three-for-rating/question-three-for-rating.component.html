@@ -1,24 +1,36 @@
+<!-- Question 3 html file -->
 
 <div class="container">
-  <div class="image">
-    <img src="assets/RateMyCourse.png">
-  </div>
+  <a routerLink="/start-screen">
+    <div class="image">
+      <img src="assets/RateMyCourse.png">
+    </div>
+    <!-- back icon -->
+    <a routerLink="/question-two-for-rating"><mat-icon class="material-icons">arrow_back</mat-icon></a>
+  </a>
 
+  <!-- progress bar -->
   <div class="barContainer">
     <mat-progress-bar color="accent" mode="buffer" value="75"></mat-progress-bar>
   </div>
 
-  <p>Question 3: Concerns</p>
+  <p class="header">Question 3: Concerns</p>
+  <p class="small">Select all that apply</p>
 
-  <mat-chip-list class="example-chip" cdkDropListOrientation="horizontal">
-    <mat-chip *ngFor="let con of concerns" (click)="con.selected = !con.selected"
-    [ngClass]="(con.selected) ? 'chip-selected' : 'chip-unselected'">
-      {{con.name}}
-    </mat-chip>
-  </mat-chip-list>
+  <!-- display material angular chips -->
+  <div class="chip-list">
+    <mat-chip-list class="example-chip" cdkDropListOrientation="horizontal">
+      <div class="center-items">
+      <mat-chip *ngFor="let con of concerns" (click)="con.selected = !con.selected"
+        [ngClass]="(con.selected) ? 'chip-selected' : 'chip-unselected'">
+        {{con.name}}
+      </mat-chip>
+    </div>
+    </mat-chip-list>
+  </div>
 
   <div class="buttonContainer">
-    <a routerLink="/question-four-for-rating"><button type="button" class="button">Next</button></a>
+    <button type="button" class="button" (click)="goToNext()">Next</button>
   </div>
 
 </div>

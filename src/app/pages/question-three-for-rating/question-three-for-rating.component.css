@@ -4,6 +4,23 @@
   min-width: 100%;
 }
 
+.header {
+  display: flex;
+  justify-content: center;
+  margin-top: 4vh;
+  color: white;
+  font-size: 3vh;
+}
+
+.small {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2vh;
+  color: white;
+  font-size: 1.8vh;
+  margin-bottom: 4vh;
+}
+
 img {
   height: 20%;
   width: 30%;
@@ -47,9 +64,45 @@ img {
   background: linear-gradient(to top, white 5%, pink 100%);
 }
 
+.chip-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3.5vh;
+}
+
 .chip-unselected {
 }
 
 .chip-selected {
   background-color: #fdca4f !important;
+}
+
+.chip-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3.5vh;
+}
+
+.center-items {
+  text-align: center;
+}
+
+.example-chip {
+  width: 60%;
+}
+
+.material-icons {
+  font-size: 4vh;
+  color: white;
+  position: fixed;
+  bottom: 91vh;
+  left: 18%;
+}
+.material-icons:hover {
+  font-size: 4vh;
+  color: pink;
+  position: fixed;
+  bottom: 91vh;
+  left: 18%;
+  cursor: pointer;
 }

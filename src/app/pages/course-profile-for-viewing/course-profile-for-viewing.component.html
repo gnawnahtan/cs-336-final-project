@@ -1,1 +1,60 @@
-<p>course-profile-for-viewing works!</p>
+<!-- Course Profile Viewing html file -->
+
+<div class="container">
+  <a routerLink="/start-screen">
+    <div class="image">
+      <img src="assets/RateMyCourse.png">
+    </div>
+  </a>
+
+  <div>
+    <h2 id='course-profile-header'>You're Viewing the Following Course Profile</h2>
+    <h1>{{selectedDepartment.code}}-{{selectedCourse.id}}: {{selectedCourse.title}}</h1>
+  </div>
+
+  <!-- average letter grade displayed here -->
+  <div class="box-container">
+    <div class="letter-container">
+      <h2>Average Letter Grade:</h2>
+      <div class="letter">
+        <mat-card class="text">{{averageLetter}}</mat-card>
+      </div>
+    </div>
+
+    <div class="prof-container">
+      <h2 class="prof-header">Top Professor:</h2>
+      <div class="prof">
+        <mat-card class="text">{{topProfessor}}</mat-card>
+      </div>
+    </div>
+  </div>
+
+  <!-- top commendations chips displayed here -->
+  <div class="chip-container">
+    <h2>Top Commendations:</h2>
+    <div class="chip-list">
+      <mat-chip-list class="example-chip" cdkDropListOrientation="horizontal">
+        <mat-chip *ngFor="let com of commendations" class="com-chip">
+          {{com}}
+        </mat-chip>
+      </mat-chip-list>
+    </div>
+  </div>
+
+  <!-- top concerns chips displayed here -->
+  <div class="chip2-container">
+    <h2>Top Cautions:</h2>
+    <div class="chip-list">
+      <mat-chip-list class="example-chip" cdkDropListOrientation="horizontal">
+        <mat-chip *ngFor="let con of concerns" class="con-chip">
+          {{con}}
+        </mat-chip>
+      </mat-chip-list>
+    </div>
+  </div>
+
+  <!-- redirects back to start screen -->
+  <div class="buttonContainer">
+    <button type="button" class="button" (click)="backToStart()">Back to Start</button>
+  </div>
+</div>
