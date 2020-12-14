@@ -43,7 +43,7 @@ export class RegisterComponent implements OnInit {
     }
     this.goToLogin();
   }
-    
+
   // toggle visibility of password
   showPassword(): void {
     this.visibility = !this.visibility
