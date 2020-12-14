@@ -24,6 +24,16 @@ export class CourseSelectionScreenForRatingComponent implements OnInit {
     public dataservice: DataService) {
   }
 
+  // navigate to first question
+  goToNext() {
+    this.router.navigate([`${'/question-one-for-rating'}`]);
+  }
+
+  // navigate back to start screen
+  goBack() {
+    this.router.navigate([`${'/start-screen'}`]);
+  }
+
   ngOnInit(): void {
     this.database.collection<Department>('departments')
       .get()

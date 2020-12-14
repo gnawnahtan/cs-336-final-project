@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-question-three-for-rating',
@@ -18,9 +19,14 @@ export class QuestionThreeForRatingComponent implements OnInit {
     {name: 'Hard Tests', selected: false},
   ];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  // navigate to question four
+  goToNext() {
+    this.router.navigate([`${'/question-four-for-rating'}`]);
   }
 
 }

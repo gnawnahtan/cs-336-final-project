@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './question-one-for-rating.component.html',
   styleUrls: ['./question-one-for-rating.component.css']
 })
-export class QuestionOneForRatingComponent implements OnInit {
+export class QuestionOneForRatingComponent {
 
   // to be used in html file to know when professor item in dropdown has been selected
   public selectedProfessor: Professor;
@@ -30,6 +30,9 @@ export class QuestionOneForRatingComponent implements OnInit {
           this.professors.push(doc.data());
         });
       });
+
+  goToNext() {
+    this.router.navigate([`${'/question-two-for-rating'}`]);
   }
 
   ngOnDestroy() {
