@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,6 +11,7 @@ export class ReviewDialogComponent {
 
   constructor(public dialog: MatDialogRef<ReviewDialogComponent>, private router: Router) {}
 
+  // closes dialog and navigates back to start screen
   close(): void {
     this.dialog.close();
     this.router.navigate([`${'/start-screen'}`]);

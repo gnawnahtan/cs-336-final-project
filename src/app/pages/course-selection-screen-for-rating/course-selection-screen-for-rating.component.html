@@ -6,7 +6,7 @@
       <img src="assets/RateMyCourse.png">
     </div>
     <!-- back icon-->
-    <a routerLink="/course-selection-screen-for-rating"><mat-icon class="material-icons">arrow_back</mat-icon></a>
+    <mat-icon class="material-icons" (click)="goBack()">arrow_back</mat-icon>
   </a>
 
   <p class="header">Choose the Course</p>
@@ -41,7 +41,7 @@
 
   <!-- will only appear when both department and course are selected -->
   <div *ngIf="selectedCourse && selectedDepartment" class="buttonContainer">
-    <a routerLink="/question-one-for-rating"><button type="button" class="button">Rate this Course</button></a>
+    <button type="button" class="button" (click)="goToNext()">Rate this Course</button>
   </div>
 
 </div>
