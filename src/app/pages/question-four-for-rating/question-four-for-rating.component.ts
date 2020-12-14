@@ -54,33 +54,17 @@ export class QuestionFourForRatingComponent implements OnInit {
   // To push all rating info to database
   pushToFirestore() {
     let ratingInfo = {
-      commendations: [],
-      concerns: [],
-      courseId: this.db.doc('courses/cs336'),
-      grade: 0,
-      professor: '',
+      commendations: (this.dataservice.commendations ? this.dataservice.commendations : []),
+      concerns: (this.dataservice.concerns ? this.dataservice.concerns : []),
+      courseId: (this.dataservice.course ? this.db.doc('courses/' + this.dataservice.department.code + '-'
+      + this.dataservice.course.id).ref : null),
+      grade: (this.grade ? this.grade : 0),
+      professor: (this.dataservice.professor ? 
+        this.dataservice.professor.firstName.substr(0, 3) +
+        this.dataservice.professor.lastName.substr(0, 3) : ''),
       user: '',
     }
 
-    if (this.dataservice.commendations) {
-      ratingInfo.commendations = this.dataservice.commendations;
-    }
-    if (this.dataservice.concerns) {
-      ratingInfo.concerns = this.dataservice.concerns;
-    }
-    if (this.dataservice.course.id) {
-      ratingInfo.courseId = this.db.doc('courses/' + this.dataservice.department.code + '-'
-        + this.dataservice.course.id);
-    }
-    if (this.grade) {
-      ratingInfo.grade = this.grade;
-    }
-    console.log(this.dataservice.professor);
-    if (this.dataservice.professor) {
-      ratingInfo.professor =
-        this.dataservice.professor.firstName.substr(0, 3) +
-        this.dataservice.professor.lastName.substr(0, 3);
-    }
     if (this.user) {
       ratingInfo.user = 'test1';
     }
