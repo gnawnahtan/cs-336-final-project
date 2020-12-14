@@ -6,7 +6,9 @@
       <img src="assets/RateMyCourse.png">
     </div>
     <!-- back icon -->
-    <a routerLink="/question-three-for-rating"><mat-icon class="material-icons">arrow_back</mat-icon></a>
+    <a routerLink="/question-three-for-rating">
+      <mat-icon class="material-icons">arrow_back</mat-icon>
+    </a>
   </a>
 
   <!-- progress bar -->
@@ -22,7 +24,7 @@
       <mat-label class="placeholder">Letter Grade</mat-label>
       <mat-select class="color" [(ngModel)]="selectedGrade">
         <mat-option>None of these</mat-option>
-        <mat-option *ngFor="let item of grades" [value]="item.letter">
+        <mat-option *ngFor="let item of grades" [value]="item.numVal">
           {{item.viewLetter}}
           <mat-divider></mat-divider>
         </mat-option>
@@ -32,9 +34,7 @@
 
   <!-- only appears when letter grade is selected -->
   <div *ngIf="selectedGrade" class="buttonContainer">
-    <button (click)="popup()" type="button" class="button">Submit Rating</button>
+    <button (click)="pushToFirestore()" type="button" class="button">Submit Rating</button>
   </div>
 
 </div>
-
-

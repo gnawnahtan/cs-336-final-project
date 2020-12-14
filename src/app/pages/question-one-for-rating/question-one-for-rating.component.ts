@@ -23,7 +23,8 @@ export class QuestionOneForRatingComponent implements OnInit {
   ngOnInit(): void {
     this.selectedDepartment = this.dataservice.department;
     const departmentDocRef = this.database.doc('departments/' + this.selectedDepartment.code);
-    this.database.collection<Professor>('professors', ref => ref.where('department', '==', departmentDocRef.ref))
+    this.database.collection<Professor>('professors', ref => ref
+      .where('department', '==', departmentDocRef.ref))
       .get()
       .subscribe(res => {
         res.docs.forEach((doc) => {

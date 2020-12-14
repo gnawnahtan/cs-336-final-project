@@ -4,7 +4,7 @@ export interface Department {
 }
 
 export interface Course {
-	id: number;
+	id: string;
 	title: string;
 	description: string;
 	department: string;
@@ -23,4 +23,9 @@ export interface Professor {
 	firstName: string;
 	lastName: string;
 	department: string;
+}
+
+export interface User {
+	password: string;
+	userName: string;
 }

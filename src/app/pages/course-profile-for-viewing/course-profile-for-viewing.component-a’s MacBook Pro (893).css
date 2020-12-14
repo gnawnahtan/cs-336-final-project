@@ -1,0 +1,190 @@
+.container {
+  background: linear-gradient(to top, white 5%, purple 100%);
+  min-height: 100vh;
+  min-width: 100%;
+  padding-bottom: 50px;
+}
+
+img {
+  height: 20%;
+  width: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 2%;
+}
+
+#course-profile-header {
+  text-align: center;
+  font-size: 3vh;
+}
+
+h1 {
+  font-size: 5vh;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+}
+
+h2 {
+  /* font-size: 3vw; */
+}
+
+p {
+  /* font: 2vw; */
+}
+
+.mat-card-title {
+  text-align: center;
+}
+.placeholder {
+  font-size: 16px;
+  text-align: center;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 8vh;
+}
+
+.button {
+  height: 8vh;
+  font-size: 40px;
+  text-align: center;
+  background-color: pink;
+  color: purple;
+  border-radius: 20px;
+  background: linear-gradient(to bottom, white 5%, pink 100%);
+}
+
+.button:hover {
+  height: 8vh;
+  font-size: 40px;
+  text-align: center;
+  background-color: pink;
+  color: purple;
+  border-radius: 20px;
+  background: linear-gradient(to top, white 5%, pink 100%);
+}
+
+.dropcon {
+  font-size: 2.5vh;
+  font: white;
+}
+
+:host ::ng-deep mat-label {
+  font-weight: bold;
+  color: white;
+}
+:host ::ng-deep mat-select {
+  font-weight: bold;
+  color: white;
+}
+:host ::ng-deep mat-option {
+  font-weight: bold;
+  color: white;
+}
+
+.letter-grade-card {
+  min-height: 75px;
+  min-width: 75px;
+  height: 15%;
+  width: 15%;
+  text-align: center;
+}
+
+#letter-grade-text {
+  font-size: 5vw;
+  color: black;
+}
+
+.prof-grade-card {
+  min-height: 75px;
+  min-width: 75px;
+  height: 10vh;
+  width: 20vh;
+  text-align: center;
+}
+
+#prof-grade-text {
+  font-size: 3vw;
+  color: black;
+  margin: 25%;
+}
+
+.letter-box {
+  display: inline;
+  float: left;
+  margin-left: 30vh;
+}
+
+.prof-box {
+  display: inline;
+  float: right;
+  margin-right: 30vh;
+}
+
+.letter-container {
+  float: left;
+  padding-right: 10%;
+}
+
+.letter {
+  display: flex;
+  justify-content: center;
+}
+
+.prof-container {
+  float: left;
+}
+
+.prof {
+  display: flex;
+  justify-content: center;
+}
+
+.prof-header {
+  display: flex;
+  justify-content: center;
+}
+
+.text {
+  font-weight: bold;
+  font-size: 5vh;
+}
+
+.box-container {
+  display: flex;
+  justify-content: center;
+}
+
+.chip-selected {
+  background-color: #fdca4f !important;
+}
+
+.chip-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+}
+
+.chip2-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1vh;
+}
+
+.chip-list {
+  padding-left: 3vh;
+}
+
+.com-chip {
+  background-color: #81ff41 !important;
+}
+
+.con-chip {
+  background-color: #ff4141 !important;
+}
