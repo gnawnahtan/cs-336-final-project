@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from "@angular/fire/firestore";
 import { Course, Department } from '../../customInterfaces';
 import { Router } from '@angular/router';
+import { DataService } from '../../dataservice';
 import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
@@ -18,7 +19,9 @@ export class CourseSelectionScreenForRatingComponent implements OnInit {
   departments: Department[] = [];
   deptCourses: Course[] = [];
 
-  constructor(private database: AngularFirestore, private router: Router) {
+  constructor(private database: AngularFirestore,
+    private router: Router,
+    public dataservice: DataService) {
   }
 
   ngOnInit(): void {
@@ -31,10 +34,14 @@ export class CourseSelectionScreenForRatingComponent implements OnInit {
       });
   }
 
+  ngOnDestroy() {
+    this.dataservice.course = this.selectedCourse;
+    this.dataservice.department = this.selectedDepartment;
+  }
+
   changeDepartment() {
     this.deptCourses = [];
-
-    const departmentDocRef = this.database.doc('departments/' + this.selectedDepartment);
+    const departmentDocRef = this.database.doc('departments/' + this.selectedDepartment.code);
     this.database
       .collection<Course>('courses', ref => ref.where('department', '==', departmentDocRef.ref))
       .get()

@@ -12,16 +12,18 @@ import { Router } from '@angular/router';
 export class QuestionOneForRatingComponent implements OnInit {
 
   // to be used in html file to know when professor item in dropdown has been selected
-  public selectedProfessor: string;
+  public selectedProfessor: Professor;
+  public selectedDepartment: Department;
+
   professors: Professor[] = [];
   constructor(private router: Router,
     private database: AngularFirestore,
     public dataservice: DataService) { }
 
   ngOnInit(): void {
-    // const departmentDocRef = this.database.doc('departments/' + this.selectedDepartment.code);
-    // this.database.collection<Professor>('professors', ref => ref.where('department', '==', departmentDocRef.ref))
-    this.database.collection<Professor>('professors')
+    this.selectedDepartment = this.dataservice.department;
+    const departmentDocRef = this.database.doc('departments/' + this.selectedDepartment.code);
+    this.database.collection<Professor>('professors', ref => ref.where('department', '==', departmentDocRef.ref))
       .get()
       .subscribe(res => {
         res.docs.forEach((doc) => {
@@ -29,4 +31,9 @@ export class QuestionOneForRatingComponent implements OnInit {
         });
       });
   }
+
+  ngOnDestroy() {
+    this.dataservice.professor = this.selectedProfessor;
+  }
 }
+
