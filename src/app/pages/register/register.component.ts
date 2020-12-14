@@ -1,4 +1,4 @@
-import { Component, OnInit,  } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
@@ -8,7 +8,10 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private db: AngularFirestore) {}
+  username: string;
+  password: string;
+
+  constructor(private db: AngularFirestore) { }
 
   ngOnInit(): void {
     //this.db.collection<Item>('/users')//, ref => ref.orderBy('timestamp')).valueChanges({ idField: 'docID' }).subscribe(res => {
@@ -18,25 +21,21 @@ export class RegisterComponent implements OnInit {
     //   )});
   }
 
-  async accountGen(){
-    let data = []
-  
-  
-    let username = document.getElementById('loginU')
-    if(username) 
-    {
-      let val = (username as HTMLInputElement).value;
-      data.push({key: "username", value: val})
+  async accountGen() {
+    let data = {
+      username: null,
+      password: null
     }
-  
-  
-    let password = document.getElementById('loginP')
-    if(password)
-    {
-      let val = (password as HTMLInputElement).value;
-      data.push({key: "password", value: val})
+
+
+    if (this.username) {
+      data.username = this.username;
     }
-    await this.db.collection('users').add(data);
+    if (this.password) {
+      data.password = this.password;
+    }
+
+    this.db.collection('users').add(data);
   }
 
 }

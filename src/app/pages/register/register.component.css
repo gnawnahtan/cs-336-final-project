@@ -24,7 +24,7 @@ h1 {
   text-align: center;
 }
 
-#login {
+.loginTB {
   height: 50px;
   width: 30%;
   margin-top: 2vh;
@@ -35,7 +35,7 @@ h1 {
   text-indent: 10px;
 }
 
-#login:hover {
+.loginTB:hover {
   height: 50px;
   background-color: pink;
   margin-bottom: 20px;

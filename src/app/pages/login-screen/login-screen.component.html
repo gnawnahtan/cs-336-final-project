@@ -6,16 +6,16 @@
   </div>
 
   <div class="login">
-    <input type="text" id="login" placeholder="Username">
+    <input type="text" class="loginTB" placeholder="Username" [(ngModel)]="username">
     <i class="material-icons">perm_identity</i>
   </div>
   <div class="login">
-    <input type="text" id="login" placeholder="Password">
+    <input type="text" class="loginTB" placeholder="Password" [(ngModel)]="password">
     <i class="material-icons">lock</i>
   </div>
 
   <div class="buttonContainer">
-    <a routerLink="/start-screen"><button type="button" class="button" (click)="login()">Login</button></a>
+    <button type="button" class="button" (click)="login()">Login</button>
   </div>
 
   <div class="textContainer">

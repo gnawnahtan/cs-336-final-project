@@ -9,55 +9,48 @@ import * as firebase from 'firebase';
 })
 export class LoginScreenComponent implements OnInit {
 
-  accounts = [];
+  accounts : User[] = [];
+
+  username : string;
+  password : string;
+
   constructor(private db: AngularFirestore) { }
 
   ngOnInit(): void {
-    this.db.collection<Item>('/users', ref => ref.orderBy('username')).valueChanges({ idField: 'docID' }).subscribe(res => {
+    this.db.collection<User>('/users', ref => ref.orderBy('username')).valueChanges({ idField: 'docID' }).subscribe(res => {
       this.accounts = [];
       res.forEach(element =>
         this.accounts.push(element)
-      )});
+      )
+      //console.log(this.accounts);
+    });
   }
 
   login() {
-    //sample insert
-
-    // this.firestore.collection<ProfessorRec>('professors').add({
-    //   id: 1,
-    //   firstName: 'Keith',
-    //   lastName: 'Vander Linden',
-    // });
+    this.checkCreds();
   }
 
   checkCreds(){
-    let userVal;
-    let passVal;
-  
-    let username = document.getElementById('loginU')
-    if(username) 
-    {
-      userVal = (username as HTMLInputElement).value;
-    }
-  
-  
-    let password = document.getElementById('loginP')
-    if(password)
-    {
-      passVal = (password as HTMLInputElement).value;
-    }
     
     let exists = false;
-    this.accounts.forEach(function (value){
-      if (value.username == userVal && value.password == passVal) exists = true;
+    console.log(this.accounts);
+
+    //this.accounts.forEach(elem => console.log(elem));
+
+    exists = this.accounts.some(function (value){
+      console.log(this.username);
+      return value.username === this.username && value.password === this.password;
     })
-    return exists
+
+    console.log(exists);
+
+    return exists;
   }
 
 
 }
 
-interface Item {
+interface User {
   username: string,
   password: string
 }

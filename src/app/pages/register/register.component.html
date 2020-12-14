@@ -1,4 +1,4 @@
-</script src = "./register.component.ts">
+
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 <div class="container">
@@ -7,15 +7,15 @@
   </div>
 
   <div class="login">
-    <input type="text" id="loginU" placeholder="Username">
+    <input type="text" class="loginTB" placeholder="Username" [(ngModel)]="username">
     <i class="material-icons">perm_identity</i>
   </div>
   <div class="login">
-    <input type="text" id="loginP" placeholder="Password">
+    <input type="text" class="loginTB" placeholder="Password" [(ngModel)]="password">
     <i class="material-icons">lock</i>
   </div>
 
   <div class="buttonContainer">
-    <a routerLink="/login-screen"><button type="button" class="button" onclick="accountGen()">Create Account</button></a>
+    <button type="button" class="button" (click)="accountGen()">Create Account</button>
   </div>
 </div>
