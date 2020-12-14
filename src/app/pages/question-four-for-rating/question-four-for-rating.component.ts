@@ -22,12 +22,12 @@ interface Grade {
 
 export class QuestionFourForRatingComponent implements OnInit {
   // to be used in html file to ensure letter grade is selected before button displayed
-  public selectedGrade: number;
+  public selectedGrade: Grade;
 
   commendations: string[];
   concerns: string[];
   courseId: string;
-  grade: number;
+  grade: Grade;
   professor: Professor;
   user: string;
 
@@ -58,7 +58,7 @@ export class QuestionFourForRatingComponent implements OnInit {
       concerns: (this.dataservice.concerns ? this.dataservice.concerns : []),
       courseId: (this.dataservice.course ? this.db.doc('courses/' + this.dataservice.department.code + '-'
       + this.dataservice.course.id).ref : null),
-      grade: (this.grade ? this.grade : 0),
+      grade: (this.selectedGrade ? this.selectedGrade.numVal : 0),
       professor: (this.dataservice.professor ? 
         this.dataservice.professor.firstName.substr(0, 3).toLowerCase() +
         this.dataservice.professor.lastName.substr(0, 3).toLowerCase() : ''),

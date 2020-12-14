@@ -24,8 +24,8 @@
       <mat-label class="placeholder">Letter Grade</mat-label>
       <mat-select class="color" [(ngModel)]="selectedGrade">
         <mat-option>None of these</mat-option>
-        <mat-option *ngFor="let item of grades" [value]="item.numVal">
-          {{item.viewLetter}}
+        <mat-option *ngFor="let grade of grades" [value]="grade">
+          {{grade.viewLetter}}
           <mat-divider></mat-divider>
         </mat-option>
       </mat-select>
