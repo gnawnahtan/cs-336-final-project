@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 import * as firebase from 'firebase';
+import { LoginDialogComponent } from 'src/app/components/login-dialog/login-dialog.component';
 
 @Component({
   selector: 'app-login-screen',
@@ -15,8 +17,8 @@ export class LoginScreenComponent implements OnInit {
   username : string = "";
   password : string = "";
 
-  constructor(private db: AngularFirestore, private router: Router) { }
-  
+  constructor(private db: AngularFirestore, private router: Router, public dialog: MatDialog) { }
+
   // visibility of password - show/hide
   public visibility: boolean = false;
 
@@ -50,6 +52,8 @@ export class LoginScreenComponent implements OnInit {
     //Route to the next screen ONLY if the account exists.
     if(exists) {
       this.router.navigate([`${'/start-screen'}`]);
+    } else {
+      const dialogRef = this.dialog.open(LoginDialogComponent);
     }
   }
 
