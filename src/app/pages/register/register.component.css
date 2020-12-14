@@ -25,7 +25,7 @@ h1 {
   padding-left: 2vh;
 }
 
-#login {
+.loginTB {
   color: purple;
   height: 50px;
   width: 30%;
@@ -37,7 +37,7 @@ h1 {
   text-indent: 10px;
 }
 
-#login:hover {
+.loginTB:hover {
   color: purple;
   height: 50px;
   width: 30%;

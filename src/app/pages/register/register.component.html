@@ -10,12 +10,13 @@
   </div>
 
   <div class="login">
-    <input type="text" id="login" placeholder="Username">
+    <input type="text" class="loginTB" placeholder="Username" [(ngModel)]="username">
     <i class="material-icons">perm_identity</i>
   </div>
 
   <div class="login">
-    <input type="text" [type]="visibility ? 'text' : 'password'" id="login" placeholder="Password">
+    <input [type]="visibility ? 'text' : 'password'" class="loginTB" placeholder="Password" [(ngModel)]="password">
+
     <i class="material-icons">lock</i>
     <div class="showpass">
       <input type="checkbox" (click)="showPassword()"><p class="little">Show Password</p>
@@ -23,8 +24,6 @@
   </div>
 
   <div class="buttonContainer">
-    <button type="button" class="button" (click)="goToLogin()">Create Account</button>
+    <button type="button" class="button" (click)="accountGen()">Create Account</button>
   </div>
-
-
 </div>
