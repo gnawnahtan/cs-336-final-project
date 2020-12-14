@@ -26,7 +26,6 @@ export class QuestionFourForRatingComponent implements OnInit {
   }
 
   grades: Grade[] = [
-    {letter: 'A+', viewLetter: 'A+'},
     {letter: 'A', viewLetter: 'A'},
     {letter: 'A-', viewLetter: 'A-'},
     {letter: 'B+', viewLetter: 'B+'},
