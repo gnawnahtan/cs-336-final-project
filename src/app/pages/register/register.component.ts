@@ -8,26 +8,23 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class RegisterComponent implements OnInit {
 
+  //Declare items to be inserted into the array.
   username: string;
   password: string;
 
   constructor(private db: AngularFirestore) { }
 
   ngOnInit(): void {
-    //this.db.collection<Item>('/users')//, ref => ref.orderBy('timestamp')).valueChanges({ idField: 'docID' }).subscribe(res => {
-    //   this.messages = [];
-    //   res.forEach(element =>
-    //     this.messages.push(element)
-    //   )});
   }
 
+  //Generates an account in the database!
   async accountGen() {
     let data = {
       username: null,
       password: null
     }
 
-
+    //Only modify the username/password if they're not empty.
     if (this.username) {
       data.username = this.username;
     }
@@ -35,7 +32,11 @@ export class RegisterComponent implements OnInit {
       data.password = this.password;
     }
 
+    //Only push if they're not empty.
+    if (data.username && data.password)
+    {
     this.db.collection('users').add(data);
+    }
   }
 
 }
