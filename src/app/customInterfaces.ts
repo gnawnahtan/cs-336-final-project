@@ -2,7 +2,7 @@ export interface Department {
 	title: string;
 	code: string;
 }
-  
+
 export interface Course {
 	id: number;
 	title: string;
@@ -22,4 +22,5 @@ export interface Rating {
 export interface Professor {
 	firstName: string;
 	lastName: string;
+	department: string;
 }
