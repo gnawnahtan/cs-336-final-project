@@ -30,6 +30,7 @@ export class QuestionOneForRatingComponent {
           this.professors.push(doc.data());
         });
       });
+    }
 
   goToNext() {
     this.router.navigate([`${'/question-two-for-rating'}`]);
