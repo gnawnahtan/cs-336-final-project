@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import * as firebase from 'firebase';
 import { LoginDialogComponent } from 'src/app/components/login-dialog/login-dialog.component';
+import { WelcomeDialogComponent } from 'src/app/components/welcome-dialog/welcome-dialog.component';
 
 @Component({
   selector: 'app-login-screen',
@@ -50,7 +51,8 @@ export class LoginScreenComponent implements OnInit {
     })
 
     //Route to the next screen ONLY if the account exists.
-    if(exists) {
+    if (exists) {
+      const dialogRef = this.dialog.open(WelcomeDialogComponent);
       this.router.navigate([`${'/start-screen'}`]);
     } else {
       const dialogRef = this.dialog.open(LoginDialogComponent);
