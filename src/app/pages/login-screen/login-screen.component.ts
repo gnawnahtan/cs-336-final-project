@@ -41,7 +41,7 @@ export class LoginScreenComponent implements OnInit {
   //Returns a boolean declaring whether or not the entered account actually exists.
   checkCreds(){
     let exists = false;
-    console.log(this.accounts);
+    //console.log(this.accounts);
     let username = this.username;
     let password = this.password;
 
