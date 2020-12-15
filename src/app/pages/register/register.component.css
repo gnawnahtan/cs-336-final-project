@@ -10,14 +10,7 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 2.2%;
-}
-
-h1 {
-  color: pink;
-  text-align: center;
-  padding: 20px;
-  font-size: 40px;
+  padding-bottom: 3.8%;
 }
 
 .login {
@@ -26,27 +19,58 @@ h1 {
 }
 
 .loginTB {
-  color: purple;
   height: 50px;
   width: 30%;
-  margin-top: 2vh;
-  margin-bottom: 5px;
-  font-size: 30px;
+  min-width: 150px;
+  background-color: pink;
+  color: purple;
+  margin-bottom: 20px;
+  font-size: 3vh;
+  border-radius: 20px;
+  background: linear-gradient(to bottom, white 5%, pink 100%);
+  text-indent: 10px;
+}
+
+.loginPA {
+  height: 50px;
+  width: 30%;
+  background-color: pink;
+  color: purple;
+  margin-bottom: 2px;
+  font-size: 3vh;
   border-radius: 20px;
   background: linear-gradient(to bottom, white 5%, pink 100%);
   text-indent: 10px;
 }
 
 .loginTB:hover {
-  color: purple;
+  height: 50px;
+  background-color: pink;
+  margin-bottom: 20px;
+  font-size: 3vh;
+  border-radius: 20px;
+  background: linear-gradient(to top, white 5%, pink 100%);
+}
+
+.loginPA:hover {
   height: 50px;
   width: 30%;
-  margin-top: 2vh;
-  margin-bottom: 5px;
-  font-size: 30px;
+  background-color: pink;
+  color: purple;
+  margin-bottom: 2px;
+  font-size: 3vh;
   border-radius: 20px;
   background: linear-gradient(to top, white 5%, pink 100%);
   text-indent: 10px;
+}
+
+.textContainer {
+  margin-top: 40px;
+}
+
+.noAccount {
+  text-align: center;
+  color: purple;
 }
 
 .buttonContainer {
@@ -57,6 +81,8 @@ h1 {
 
 .button {
   height: 8vh;
+  min-height: 50px;
+  min-width: 75px;
   font-size: 4.5vh;
   background-color: pink;
   color: purple;
@@ -95,25 +121,10 @@ h1 {
   top: 2px;
 }
 
-.back-icon {
-  font-size: 4vh;
-  color: white;
-  position: fixed;
-  bottom: 91vh;
-  left: 18%;
-}
-.back-icon:hover {
-  font-size: 4vh;
-  color: pink;
-  position: fixed;
-  bottom: 91vh;
-  left: 18%;
-  cursor: pointer;
-}
-
 .showpass {
   display: flex;
   justify-content: center;
+  padding-top: 2px;
 }
 
 .little {

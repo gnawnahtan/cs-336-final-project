@@ -33,6 +33,7 @@ import { LogOutDialogComponent } from './components/log-out-dialog/log-out-dialo
 import { ReviewDialogComponent } from './components/review-dialog/review-dialog.component';
 import { LoginDialogComponent } from './components/login-dialog/login-dialog.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { WelcomeDialogComponent } from './components/welcome-dialog/welcome-dialog.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     ReviewDialogComponent,
     LoginDialogComponent,
     ConfirmDialogComponent,
+    WelcomeDialogComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
