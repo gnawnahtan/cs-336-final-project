@@ -41,17 +41,18 @@ export class CourseProfileForViewingComponent implements OnInit {
     this.selectedDepartment.code = this.selectedDepartment.code.toUpperCase();
   }
 
-  getData() : void {
+  getData(): void {
     const courseDocRef = this.database.doc('courses/' + this.selectedDepartment.code + '-' + this.selectedCourse.id);
 
     this.database
-    .collection<Rating>('ratings', ref => ref.where('courseId', '==', courseDocRef.ref))
-    .get()
-    .subscribe(async res => {
-      await res.docs.forEach((doc) => {
-        this.courseRatings.push(doc.data());
-        console.log(this.courseRatings);
-      });
+      .collection<Rating>('ratings', ref => ref.where('courseId', '==', courseDocRef.ref))
+      .get()
+      .subscribe(async res => {
+        await res.docs.forEach((doc) => {
+          this.courseRatings.push(doc.data());
+          console.log(this.courseRatings);
+        });
+
       this.averageGrade = this.courseRatings.reduce((total, next) => total + next.grade, 0) / this.courseRatings.length;
       this.averageLetter = this.getLetterGrade(this.averageGrade);
 
@@ -76,10 +77,10 @@ export class CourseProfileForViewingComponent implements OnInit {
   }
 
 
-  getLetterGrade(grade : number) : string {
+  getLetterGrade(grade: number): string {
     let letter = '?';
 
-    CourseProfileForViewingComponent.letterGrades.some(function(el) {
+    CourseProfileForViewingComponent.letterGrades.some(function (el) {
       letter = el.letter;
       return grade >= el.grade;
     });
@@ -95,6 +96,6 @@ export class CourseProfileForViewingComponent implements OnInit {
 }
 
 interface Grade {
-  grade : number;
-  letter : string;
+  grade: number;
+  letter: string;
 }
