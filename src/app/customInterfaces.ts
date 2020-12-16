@@ -27,5 +27,5 @@ export interface Professor {
 
 export interface User {
 	password: string;
-	userName: string;
+	username: string;
 }
