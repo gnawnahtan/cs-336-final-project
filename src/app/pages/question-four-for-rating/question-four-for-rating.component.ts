@@ -62,7 +62,7 @@ export class QuestionFourForRatingComponent implements OnInit {
       professor: (this.dataservice.professor ?
         this.dataservice.professor.firstName.substr(0, 3).toLowerCase() +
         this.dataservice.professor.lastName.substr(0, 3).toLowerCase() : ''),
-      user: ' test', //(this.dataservice.user.username ? this.dataservice.user.username : ''),
+      user: (this.dataservice.user.username ? this.dataservice.user.username : ''),
     }
 
     if (this.user) {
