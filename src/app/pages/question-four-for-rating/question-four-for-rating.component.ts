@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { RotateProp } from '@fortawesome/fontawesome-svg-core';
 import { ReviewDialogComponent } from 'src/app/components/review-dialog/review-dialog.component';
 import { StartScreenComponent } from '../start-screen/start-screen.component';
-import { Professor } from 'src/app/customInterfaces';
+import { Professor, User } from 'src/app/customInterfaces';
 
 interface Grade {
   letter: string;
@@ -29,7 +29,7 @@ export class QuestionFourForRatingComponent implements OnInit {
   courseId: string;
   grade: Grade;
   professor: Professor;
-  user: string;
+  user: User;
 
   constructor(public dialog: MatDialog, private db: AngularFirestore, public dataservice: DataService) { }
 
@@ -57,12 +57,12 @@ export class QuestionFourForRatingComponent implements OnInit {
       commendations: (this.dataservice.commendations ? this.dataservice.commendations : []),
       concerns: (this.dataservice.concerns ? this.dataservice.concerns : []),
       courseId: (this.dataservice.course ? this.db.doc('courses/' + this.dataservice.department.code + '-'
-      + this.dataservice.course.id).ref : null),
+        + this.dataservice.course.id).ref : null),
       grade: (this.selectedGrade ? this.selectedGrade.numVal : 0),
-      professor: (this.dataservice.professor ? 
+      professor: (this.dataservice.professor ?
         this.dataservice.professor.firstName.substr(0, 3).toLowerCase() +
         this.dataservice.professor.lastName.substr(0, 3).toLowerCase() : ''),
-      user: '',
+      user: ' test', //(this.dataservice.user.username ? this.dataservice.user.username : ''),
     }
 
     if (this.user) {

@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import * as firebase from 'firebase';
 import { LoginDialogComponent } from 'src/app/components/login-dialog/login-dialog.component';
 import { WelcomeDialogComponent } from 'src/app/components/welcome-dialog/welcome-dialog.component';
+import { DataService } from 'src/app/dataservice';
 
 @Component({
   selector: 'app-login-screen',
@@ -12,13 +13,15 @@ import { WelcomeDialogComponent } from 'src/app/components/welcome-dialog/welcom
   styleUrls: ['./login-screen.component.css']
 })
 export class LoginScreenComponent implements OnInit {
-  accounts : User[] = [];
+  accounts: User[] = [];
 
   //generate objects to later be pushed to the database
-  username : string = "";
-  password : string = "";
+  username: string = "";
+  password: string = "";
 
-  constructor(private db: AngularFirestore, private router: Router, public dialog: MatDialog) { }
+  constructor(private db: AngularFirestore, private router: Router,
+    public dialog: MatDialog,
+    public dataservice: DataService) { }
 
   // visibility of password - show/hide
   public visibility: boolean = false;
@@ -31,22 +34,28 @@ export class LoginScreenComponent implements OnInit {
       this.accounts = [];
       res.forEach(element =>
         this.accounts.push(element)
-      )});
+      )
+    });
   }
+
+  // ngOnDestroy(): void {
+  //   this.dataservice.user.username = this.username;
+  //   this.dataservice.user.password = this.password;
+  // }
 
   login() {
     this.checkCreds();
   }
 
   //Returns a boolean declaring whether or not the entered account actually exists.
-  checkCreds(){
+  checkCreds() {
     let exists = false;
     console.log(this.accounts);
     let username = this.username;
     let password = this.password;
 
     //Parses through existing accounts.
-    exists = this.accounts.some(function (value){
+    exists = this.accounts.some(function (value) {
       return value.username === username && value.password === password;
     })
 
