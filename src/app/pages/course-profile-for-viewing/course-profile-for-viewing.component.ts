@@ -70,9 +70,11 @@ export class CourseProfileForViewingComponent implements OnInit {
       this.courseRatings.forEach(element => {
         this.commendations = this.commendations.concat(element.commendations);
       });
+      this.commendations = [...new Set(this.commendations)];
       this.courseRatings.forEach(element => {
         this.concerns = this.concerns.concat(element.concerns);
       });
+      this.concerns = [...new Set(this.concerns)];
     });
   }
 
